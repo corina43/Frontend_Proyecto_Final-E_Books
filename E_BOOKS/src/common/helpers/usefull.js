@@ -1,17 +1,17 @@
-export const errorCheck = (value, type, password1) => {
+export const testErrores = (value, type, password1) => {
     switch (type) {
       case "text":
         if (!/[a-z]/gi.test(value)) {
-          return "Incorrect format";
+          return "Formato incorrecto";
         } else {
           return "";
         }
   
       case "name":
         if (value === "") {
-          return "Name cannot be empty";
+          return "El nombre no puede estar vacío";
         } else if (!/[a-z]/gi.test(value)) {
-          return "Incorrect format";
+          return "Formato incorrecto";
         } else {
           return "";
         }
@@ -22,36 +22,37 @@ export const errorCheck = (value, type, password1) => {
             value
           )
         ) {
-          return "Write a valid email";
+          return "Escribe un correo electrónico válido";
         } else {
           return "";
         }
   
       case "password":
         if (value.length < 8) {
-          return "Password must contain at least 8 characters";
+          return "La contraseña debe contener al menos 8 caracteres";
         }
         // validate it has one lower case letter
         if (!value.match(/[a-z]/)) {
-          return "Password must contain at least one lowercase";
+          return "La contraseña debe contener al menos una letra minuscula";
         }
         // validate it has one upper case letter
         if (!value.match(/[A-Z]/)) {
-          return "Password must contain at least one uppercase";
+          return "La contraseña debe contener al menos una letra mayuscula";
         }
         // validate it has one number
         if (!value.match(/[0-9]/)) {
-          return "Password must contain at least one number";
+          return "La contraseña debe contener al menos un número";
+          return "";
         } else {
           return "";
         }
   
-      case "password2":
-        if (value !== password1) {
-          return "Passwords don't match";
-        } else {
-          return "";
-        }
+      // case "password2":
+      //   if (value !== password1) {
+      //     return "Passwords don't match";
+      //   } else {
+      //     return "Las contraseñas no coinciden";
+      //   }
   
       default:
         console.log("Error");
