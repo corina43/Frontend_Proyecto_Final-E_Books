@@ -1,0 +1,12 @@
+.inputBasicDesign {
+    background-color: cornflowerblue;
+
+    border: 0.2em solid rgb(9, 9, 11);
+
+    margin: 0.5em;
+    height: 2em;
+    width: 15em;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
