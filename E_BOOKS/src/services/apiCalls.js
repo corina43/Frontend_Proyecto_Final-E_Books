@@ -5,10 +5,10 @@ import axios from 'axios';
 
 const root = "http://localhost:3009"
 
-// export const logMe = async (body) => {
+export const logMe = async (body) => {
 
-//     return await axios.post(`${root}/auth/login`, body);
-// } 
+    return await axios.post(`${root}/auth/login`, body);
+} 
 
 // export const bringUsers = async (token) => {
 //     let config = {
@@ -23,7 +23,7 @@ const root = "http://localhost:3009"
 export const createUserProfile = async (body) => {
 
   let _body={
-    
+
     nombre: body.nombre,
     apellido: body.apellido,
     email: body.email,

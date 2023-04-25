@@ -4,7 +4,8 @@ import './App.css'
 import { Register } from './containers/Register/Register'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Home } from './common/Home/Home'
-import Login from './containers/Login/Login'
+import { Login } from './containers/Login/Login'
+
 
 function App() {
 
