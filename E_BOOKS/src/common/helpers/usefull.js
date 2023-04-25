@@ -1,62 +1,70 @@
-export const testErrores = (value, type, password1) => {
-    switch (type) {
-      case "text":
-        if (!/[a-z]/gi.test(value)) {
-          return "Formato incorrecto";
-        } else {
-          return "";
-        }
-  
-      case "name":
-        if (value === "") {
-          return "El nombre no puede estar vacío";
-        } else if (!/[a-z]/gi.test(value)) {
-          return "Formato incorrecto";
-        } else {
-          return "";
-        }
-  
-      case "email":
-        if (
-          !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-            value
-          )
-        ) {
-          return "Escribe un correo electrónico válido";
-        } else {
-          return "";
-        }
-  
-      case "password":
-        if (value.length < 8) {
-          return "La contraseña debe contener al menos 8 caracteres";
-        }
-        // validate it has one lower case letter
-        if (!value.match(/[a-z]/)) {
-          return "La contraseña debe contener al menos una letra minuscula";
-        }
-        // validate it has one upper case letter
-        if (!value.match(/[A-Z]/)) {
-          return "La contraseña debe contener al menos una letra mayuscula";
-        }
-        // validate it has one number
-        if (!value.match(/[0-9]/)) {
-          return "La contraseña debe contener al menos un número";
-          return "";
-        } else {
-          return "";
-        }
-  
-      // case "password2":
-      //   if (value !== password1) {
-      //     return "Passwords don't match";
-      //   } else {
-      //     return "Las contraseñas no coinciden";
-      //   }
-  
-      default:
-        console.log("Error");
-  
-        break;
-    }
-  };
+export const validate = (name, data, required) => {
+  switch (name) {
+    // NOMBRE
+    case "nombre":
+    // APELLIDO
+    case "apellido":
+      if (data === "" && required === true) {
+        return { message: "Por favor, complete el campo", valid: false };
+      } else if (!/[a-zA-Z]/.test(data)) {
+        return { message: "Por favor, ingrese un texto válido", valid: false };
+      }
+      return { message: "", valid: true };
+
+    // EMAIL
+    case "email":
+      if (data === "" && required === true) {
+        return { message: "Campo 'Email' requerido.", valid: false };
+      } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(data)) {
+        return { message: "Formato de correo electrónico inválido.", valid: false };
+      }
+      return { message: "", valid: true };
+
+    // CONTRASEÑA
+    case "password":
+      if (data === "" && required === true) {
+        return { message: "Campo 'Contraseña' requerido.", valid: false };
+      } else if (!/.{8,}$/.test(data)) {
+        return {
+          message: "La contraseña debe contener al menos ocho caracteres.",
+          valid: false,
+        };
+      } else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(data)) {
+        return {
+          message: "La contraseña debe contener al menos una letra y un número.",
+          valid: false,
+        };
+      }
+      return { message: "", valid: true };
+
+    // FECHA DE NACIMIENTO
+    case "fecha_nacimiento":
+      if (data === "" && required === true) {
+        return {
+          message: "Campo 'Fecha de nacimiento' requerido",
+          valid: false,
+        };
+      }
+      return { message: "", valid: true };
+
+    // CIUDAD
+    case "ciudad":
+    // PAIS
+    case "pais":
+    // GENEROS PREFERIDOS
+    case "generos_preferidos":
+    // BIOGRAFÍA
+    case "biografia":
+      if (data === "" && required === false) {
+        return { message: "", valid: true };
+      } else if (!/[a-zA-Z]/.test(data)) {
+        return { message: "Solo se permiten caracteres latinos", valid: false };
+      }
+      return { message: "", valid: true };
+
+    default:
+      console.log("Error no reconocido");
+  }
+};
+
+
