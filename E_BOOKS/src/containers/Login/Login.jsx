@@ -57,7 +57,7 @@ export const Login = () => {
         console.log(datosBackend);
         //Este es el momento en el que guardo en REDUX
         dispatch(login({ credentials: datosBackend }));
-        setWelcome(`Bienvenid@ de nuevo ${datosBackend.usuario.userName}`);
+        setWelcome(`Bienvenid@ de nuevo ${datosBackend.usuario.nombre}`);
       
         //Redirección a Home
         setTimeout(() => {
