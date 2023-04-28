@@ -6,7 +6,7 @@ export const bookSlice = createSlice({
     details: {},
     query: "",
     search: [],
-    loans: [],
+    prestamos: [],
     byAutor: [],
   },
   reducers: {
@@ -31,7 +31,7 @@ export const bookSlice = createSlice({
     addPrestamos: (state, action) => {
       return {
         ...state,
-        loans: action.payload
+        prestamos: action.payload
       }
     },
     addByAutor: (state, action) => {

@@ -1,39 +1,25 @@
-// import { configureStore } from '@reduxjs/toolkit';
-// import userSlice from '../containers/User/userSlice';
-// import { combineReducers } from 'redux';
-// import detailSlice from '../containers/Detail/detailSlice';
-
-// const reducers = combineReducers({
-//     user: userSlice.reducers,
-//    // detail: detailSlice,
-  
-// })
-
-// export default configureStore;
-
-//store.js
 import { configureStore } from '@reduxjs/toolkit';
-import { combineReducers } from 'redux';
+import storage from 'redux-persist/lib/storage';
+import { combineReducers } from '@reduxjs/toolkit';
+import { persistReducer } from 'redux-persist';
+import thunk from 'redux-thunk';
 import userSlice from '../containers/User/userSlice';
+import detailSlice from '../containers/Detail/detailSlice';
 
 const reducers = combineReducers({
-  user: userSlice.reducers,
-  // detail: detailSlice,
+    user: userSlice,
+    detail: detailSlice,
 })
-
-const store = configureStore({
-  reducer: reducers
+const persistConfig = {
+    key: 'root',
+    storage,
+}
+const persistedReducer = persistReducer(persistConfig, reducers);
+export default configureStore({
+    reducer: persistedReducer,
+    middleware: [thunk]
 });
 
 
-export const allProductos = async () => {
-    try {
-      let res = await axios.get(`${URL}/productos/`);
-      return res.data;
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
 
-export default store;

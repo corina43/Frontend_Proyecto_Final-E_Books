@@ -16,12 +16,13 @@ export const Login = () => {
 
   //Instancio Redux en modo escritura y lectura
   const dispatch = useDispatch();
-  const credentialsRdx = useSelector(userData);
+  //const credentialsRdx = useSelector(userData);
 
   const [credenciales, setCredenciales] = useState({
     email: "",
     password: "",
   });
+
 
   const [welcome, setWelcome] = useState("");
 
@@ -53,11 +54,12 @@ export const Login = () => {
           token: respuesta.data.data,
           usuario: decode,
         };
+        let nombre = datosBackend.usuario.email;
         console.log('datosBackend');
         console.log(datosBackend);
         //Este es el momento en el que guardo en REDUX
         dispatch(login({ credentials: datosBackend }));
-        setWelcome(`Bienvenid@ de nuevo ${datosBackend.usuario.nombre}`);
+        setWelcome(`Bienvenid@ de nuevo ${nombre}`);
       
         //Redirección a Home
         setTimeout(() => {
@@ -98,6 +100,7 @@ export const Login = () => {
           </Form.Group>
 
           <Button variant="primary " onClick={() => logeame()}>
+            {""}
             Iniciar sesión
           </Button>
         </Form>

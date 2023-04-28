@@ -50,14 +50,14 @@ export const Register = () => {
       apellidoValido: false,
       emailValido: false,
       fecha_nacimientoValido: false,
-      fecha_registroValido: false,
-      ciudadValido: false,
-      paisValido: false,
-      generos_preferidosValido: false,
-      biografiaValido: false,
+      // fecha_registroValido: false,
+      // ciudadValido: false,
+      // paisValido: false,
+      // generos_preferidosValido: false,
+      // biografiaValido: false,
       passwordValido: false
     });
-  
+  console.log(credencialesValido)
     const [registerAct, setRegisterAct] = useState(false);
   
     const inputHandler = (e) => {
@@ -154,12 +154,12 @@ export const Register = () => {
       <FormGroup>
         <FormLabel for="nombre">Nombre</FormLabel>
         <FormControl
-          type="text"
-          name="nombre"
-          id="nombre"
-          placeholder="Nombre..."
-          required
-          value={credenciales.nombre}
+          type={"text"}
+          name={"nombre"}
+          id={"nombre"}
+          placeholder={"Nombre..."}
+          required = {true}
+           value={credenciales.nombre}
           onChange={(e) => inputHandler(e)}
           onBlur={(e) => checkError(e)}
           invalid={credencialesError.nombreError !== ""}

@@ -10,15 +10,15 @@ export const logMe = async (body) => {
     return await axios.post(`${root}/auth/login`, body);
 } 
 
-// export const bringUsers = async (token) => {
-//     let config = {
-//       headers: { 
-//         'Authorization': 'Bearer '+ token,  
-//       }
-//     };
+export const bringUsers = async (token) => {
+    let config = {
+      headers: { 
+        'Authorization': 'Bearer '+ token,  
+      }
+    };
 
-//     return await axios.get(`${root}/api/users`, config);
-// }
+    return await axios.get(`${root}/usuarios`, config);
+}
 
 export const createUserProfile = async (body) => {
 
@@ -40,4 +40,15 @@ export const createUserProfile = async (body) => {
   console.log(_body)
   let res = await axios.post(`${root}/auth/register`, _body)
   console.log(res)
+};
+
+
+
+export const getAll = async () => {
+  try {
+    let res = await axios.get(`${root}/productos`);
+    return res.data;
+  } catch (error) {
+    console.error(error);
+  }
 };

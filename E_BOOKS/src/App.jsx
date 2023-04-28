@@ -1,10 +1,9 @@
 import { useState } from 'react'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
-import { Register } from './containers/Register/Register'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Home } from './common/Home/Home'
-import { Login } from './containers/Login/Login'
+import { Body } from './containers/Body/Body';
+import { Header } from './common/Header/Header';
+
 
 
 function App() {
@@ -12,13 +11,10 @@ function App() {
 
   return (
     <div className="App">
-    
-  <Routes>
-  <Route path="/" element={<Home/>} />
-  <Route path="/register" element={<Register />} />
-  <Route path="/login" element={<Login />} />
-  </Routes>
-   
+ 
+ <Header/>
+  
+  <Body />
   
     </div>
   )

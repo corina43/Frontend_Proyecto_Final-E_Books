@@ -1,5 +1,5 @@
 import React from 'react'
-//import './BookCard.css'
+import './BookCard.css'
 
 function BookCard({productos, clickedProductos}) {
   if (productos.title.length > 12) {
