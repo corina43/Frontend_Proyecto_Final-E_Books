@@ -76,7 +76,7 @@ import Nav from "react-bootstrap/Nav";
                   
                   </NavDropdown>
                   <NavDropdown title="Get All" id="basic-nav-dropdown">
-                    <NavDropdown.Item as={Link} to="/usuarios/all">
+                    <NavDropdown.Item as={Link} to="/usuarios/todos">
                       Get All Users</NavDropdown.Item>
                    
                     <NavDropdown.Item as={Link} to="/productos">
