@@ -41,10 +41,10 @@ import Nav from "react-bootstrap/Nav";
               ) : credencialesRedux?.credentials?.usuario?.id_rol === 2 ? (
                 <>
                   <Nav.Link as={Link} to="/" onClick={() => logout()}>
-                    Eres user Logout
+                     Logout
                   </Nav.Link>
-                  <Nav.Link as={Link} to="/profile">
-                    Get My Profile
+                  <Nav.Link as={Link} to="/usuarios">
+                     Profile
                   </Nav.Link>
                   <NavDropdown title="Profile Update" id="basic-nav-dropdown">
                     <NavDropdown.Item as={Link} to="/profile/update">
@@ -54,7 +54,7 @@ import Nav from "react-bootstrap/Nav";
                     {/* <NavDropdown.Item as={Link} to="/review/all">
                       Get All Reviews</NavDropdown.Item> */}
                     <NavDropdown.Item as={Link} to="/productos">
-                      Todos los Productos</NavDropdown.Item>
+                       Productos</NavDropdown.Item>
                   </NavDropdown>
                   {/* <Nav.Link as={Link} to="/games/favourites">
                     Get Favourites Games
@@ -69,8 +69,8 @@ import Nav from "react-bootstrap/Nav";
                     Eres Admin Logout
                   </Nav.Link>
                   <NavDropdown title="Profile" id="basic-nav-dropdown">
-                    <NavDropdown.Item as={Link} to="/profile">
-                      Get My Profile</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/usuarios">
+                      Profile</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="/profile/update">
                       Profile Update</NavDropdown.Item>
                   
@@ -79,8 +79,8 @@ import Nav from "react-bootstrap/Nav";
                     <NavDropdown.Item as={Link} to="/usuarios/all">
                       Get All Users</NavDropdown.Item>
                    
-                    <NavDropdown.Item as={Link} to="/productos/all">
-                      Get All Games</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/productos">
+                      Productos</NavDropdown.Item>
                       </NavDropdown>
                   <Nav.Link as={Link} to="/productos/new">
                     New Game

@@ -20,6 +20,17 @@ export const bringUsers = async (token) => {
     return await axios.get(`${root}/usuarios`, config);
 }
 
+export const verUsuariosPerfil = async (token) => {
+  let config = {
+    headers: { 
+      'Authorization': 'Bearer '+ token,  
+    }
+    };
+    let res = await axios.get(`${root}/usuarios/profile`, config)
+    return res.data
+    
+}
+
 export const createUserProfile = async (body) => {
 
   let _body={
