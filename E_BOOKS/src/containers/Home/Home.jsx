@@ -6,6 +6,8 @@ import { Container, Row, Col, Card, Button} from 'react-bootstrap';
 
 export const Home = () => {
   // Datos de ejemplo de libros
+
+  
   const libros = {
     'Romance': [
       { titulo: 'Orgullo y prejuicio', autor: 'Jane Austen', img: 'https://via.placeholder.com/150?text=Orgullo+y+prejuicio' },
@@ -28,6 +30,11 @@ export const Home = () => {
   };
 
   return (
+
+
+
+
+    
     // ...
     <Container fluid>
       {/* ... */}

@@ -5,10 +5,10 @@ import { useDispatch ,useSelector } from 'react-redux';
 import { userData } from '../User/userSlice';
 import { adminData } from '../../containers/Admin/AdminSlice';
 import { verUsuarios } from '../../services/apiCalls';
-//import './Admin.css'
+import './Admin.css'
 import { Col, ListGroup } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-// import CardDeck from 'react-bootstrap/CardDeck';
+import { addChoosen } from '../Detail/detailSlice';
 import Row from 'react-bootstrap/Row';
 
 
@@ -22,7 +22,6 @@ export const Admin = () => {
     // HOOKS
     const [usuarios, setUsuarios] = useState([]);
 
-  
 
     useEffect(() => {
 
@@ -40,6 +39,13 @@ export const Admin = () => {
 
         }
     }, [usuarios]);
+    
+    const selected = (persona) => {
+      dispatch(addChoosen({ choosenObject: persona }))
+      setTimeout(() => {
+        navigate("/prestamos/historial/id_usuario");
+      }, 500);
+    }
 console.log(usuarios, "sou users")
     return (
         
@@ -48,47 +54,47 @@ console.log(usuarios, "sou users")
   <h3>Usuarios existentes:</h3>
      {usuarios.length > 0 ? (
         <Row xs={1} md={2} lg={5}>
-          {usuarios.map((data) => {
+          {usuarios.map((persona) => {
             return (
-              <Col key={data.id}>
-                <Card className="my-3">
+              <Col key={persona.id}>
+                <Card className="card my-3">
            <ListGroup variant="flush"> 
             <ListGroup.Item>
               <span className="text1">Nombre:</span>
-              <span className="text2"> {data.nombre}</span>
+              <span className="text2"> {persona.nombre}</span>
             </ListGroup.Item>
             <ListGroup.Item>
               <span className="text1"> Apellido: </span>
-              <span className="text2"> {data.apellido}</span>
+              <span className="text2"> {persona.apellido}</span>
             </ListGroup.Item>
             <ListGroup.Item>
               <span className="text1"> Email: </span>
-              <span className="text2"> {data.email}</span>
+              <span className="text2"> {persona.email}</span>
             </ListGroup.Item>
           
             <ListGroup.Item>
               <span className="text1"> Fecha nacimiento: </span>
-              <span className="text2"> {data.fecha_nacimiento}</span>
+              <span className="text2"> {persona.fecha_nacimiento}</span>
             </ListGroup.Item>
             <ListGroup.Item>
               <span className="text1"> Fecha registro: </span>
-              <span className="text2"> {data.fecha_registro}</span>
+              <span className="text2"> {persona.fecha_registro}</span>
             </ListGroup.Item>
             <ListGroup.Item>
               <span className="text1"> Ciudad: </span>
-              <span className="text2"> {data.ciudad}</span>
+              <span className="text2"> {persona.ciudad}</span>
             </ListGroup.Item>
             <ListGroup.Item>
               <span className="text1">Pais </span>
-              <span className="text2"> {data.pais}</span>
+              <span className="text2"> {persona.pais}</span>
             </ListGroup.Item>
             <ListGroup.Item>
               <span className="text1">Generos preferidos </span>
-              <span className="text2"> {data.generos_preferidos}</span>
+              <span className="text2"> {persona.generos_preferidos}</span>
             </ListGroup.Item>
             <ListGroup.Item>
               <span className="text1">Biografia </span>
-              <span className="text2"> {data.biografia}</span>
+              <span className="text2"> {persona.biografia}</span>
             </ListGroup.Item>
           </ListGroup>
         </Card>

@@ -1,36 +1,30 @@
-import react from "react";
-import { useState } from "react/cjs/react.development";
-import Modal from "./Modal";
-export const Card = ({ book }) => {
+import React from 'react'
+import './Card.css'
 
-    const [show,setShow]=useState(false);
-    const [bookItem,setItem]=useState();
-    console.log(book)
+function Card({producto, clickedProducto}) {
+  if (producto.titulo.length > 12) {
     return (
-        <>
-            {
-                book.map((item) => {
-                    let thumbnail=item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
-                    let amount=item.saleInfo.listPrice && item.saleInfo.listPrice.amount;
-                    if(thumbnail!= undefined && amount !=undefined)
-                    {
-                        return (
-                            <>
-                            <div className="card" onClick={()=>{setShow(true);setItem(item)}}>
-                                <img src={thumbnail} alt="" />
-                                <div className="bottom">
-                                    <h3 className="title">{item.volumeInfo.title}</h3>
-                                    <p className="amount">&#8377;{amount}</p>
-                                </div>
-                            </div>
-                              <Modal show={show} item={bookItem} onClose={()=>setShow(false)}/>
-                            </>
-                        )
-                    }
-                    
-                })
-            }
-
-        </>
-    )
+      <div className="cardDesign">
+        <p className="text">{producto.titulo.slice(0, 12) + "..."}</p>
+        <img
+          className="imageDesign"
+          src={`${producto.poster_path}`}
+          onClick={() => clickedProducto(producto)}
+        />
+      </div>
+    );
+  } else {
+    return (
+      <div className="cardDesign">
+        <p className="text">{producto.titulo}</p>
+        <img
+          className="imageDesign"
+          src={`${producto.poster_path}`}
+          onClick={() => clickedProducto(producto)}
+        />
+      </div>
+    );
+  }
 }
+
+export default Card;

@@ -50,9 +50,9 @@ import Nav from "react-bootstrap/Nav";
                     <NavDropdown.Item as={Link} to="/profile/update">
                       Profile Update</NavDropdown.Item>
                  </NavDropdown>
-                  <NavDropdown title="Get All" id="basic-nav-dropdown">
-                    {/* <NavDropdown.Item as={Link} to="/review/all">
-                      Get All Reviews</NavDropdown.Item> */}
+                  <NavDropdown title="miInformacion" id="basic-nav-dropdown">
+                    <NavDropdown.Item as={Link} to="/prestamos/historial/:id_usuario">
+                      Mis Prestamos</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="/productos">
                        Productos</NavDropdown.Item>
                   </NavDropdown>
@@ -66,7 +66,7 @@ import Nav from "react-bootstrap/Nav";
               ) : credencialesRedux?.credentials?.usuario?.id_rol === 1 ? (
                 <>
                   <Nav.Link as={Link} to="/" onClick={() => logout()}>
-                    Eres Admin Logout
+                     Logout
                   </Nav.Link>
                   <NavDropdown title="Profile" id="basic-nav-dropdown">
                     <NavDropdown.Item as={Link} to="/usuarios">
@@ -75,16 +75,20 @@ import Nav from "react-bootstrap/Nav";
                       Profile Update</NavDropdown.Item>
                   
                   </NavDropdown>
-                  <NavDropdown title="Get All" id="basic-nav-dropdown">
+                  <NavDropdown title="Admin" id="basic-nav-dropdown">
                     <NavDropdown.Item as={Link} to="/usuarios/todos">
-                      Get All Users</NavDropdown.Item>
+                    Todos los usuarios </NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to="/usuarios/prestamos">
+                      Prestamos</NavDropdown.Item>
                    
                     <NavDropdown.Item as={Link} to="/productos">
                       Productos</NavDropdown.Item>
                       </NavDropdown>
-                  <Nav.Link as={Link} to="/productos/new">
-                    New Game
+                   
+                  <Nav.Link as={Link} to="/Vistaproductos">
+                    Nuevos Libros
                   </Nav.Link>
+               
                 </>
               ) : (
                 <>
@@ -94,7 +98,7 @@ import Nav from "react-bootstrap/Nav";
                 </>
               )}
               <Nav.Link as={Link} to="/about">
-                About Me
+                About us
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

@@ -1,9 +1,9 @@
 import axios from 'axios';
+import api from './api';
 
 
 
-
-const root = "http://localhost:3009"
+const root = "http://localhost:3009";
 
 export const logMe = async (body) => {
 
@@ -72,5 +72,22 @@ export const getAll = async () => {
     return res.data;
   } catch (error) {
     console.error(error);
+  }
+};
+export const getAllPrestamos = async () => {
+  try {
+    let res = await axios.get(`${root}/usuarios/prestamos`);
+    return res.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+export const ObtenerHistorialPrestamos = async (email) => {
+  try {
+    let res = await axios.get(`${root}/prestamos/historial/${id_usuario}}`);
+    return res.data;
+  } catch (error) {
+    console.error(error);
+    throw new Error('No se pudo obtener el historial de préstamos.');
   }
 };

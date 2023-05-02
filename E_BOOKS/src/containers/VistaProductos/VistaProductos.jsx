@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const ProductView = () => {
+const VistaProductos = () => {
+  const root = "http://localhost:3009"
   const [productos, setProductos] = useState([]);
   const [search, setSearch] = useState('');
 
   const getAllProducts = async () => {
     try {
-      const response = await axios.get('localhost:3009/productos');
+      const response = await axios.get(`${root}/productos`);
       setProductos(response.data);
     } catch (error) {
       console.error('Error al obtener todos los productos:', error);
@@ -16,7 +17,7 @@ const ProductView = () => {
 
   const getProductByTitulo = async (titulo) => {
     try {
-      const response = await axios.get(`localhost:3009/productos/titulo/${titulo}`);
+      const response = await axios.get(`${root}/productos/titulo/${titulo}`);
       setProductos(response.data);
     } catch (error) {
       console.error('Error al obtener producto por título:', error);
@@ -25,7 +26,7 @@ const ProductView = () => {
 
   const getProductById = async (id) => {
     try {
-      const response = await axios.get(`/api/productos/id/${id}`);
+      const response = await axios.get(`${root}/productos/id/${id}`);
       setProductos(response.data);
     } catch (error) {
       console.error('Error al obtener producto por ID:', error);
@@ -68,5 +69,5 @@ const ProductView = () => {
   );
 };
 
-export default ProductView;
+export default VistaProductos;
 
