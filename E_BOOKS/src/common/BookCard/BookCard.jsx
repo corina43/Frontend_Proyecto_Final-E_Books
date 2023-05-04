@@ -24,10 +24,7 @@ function BookCard({ productos }) {
 
       
         <ul>
-          {/* <li>
-            <span className="textColor">Producto ID: </span>
-            {productos.id}
-          </li> */}
+         
           <li>
             <span className="textColor">Titulo: </span>
             {productos.titulo}
@@ -56,43 +53,9 @@ function BookCard({ productos }) {
             <span className="textColor">Genero: </span>
             {productos.genero}
           </li>
-          {/* <li>
-            <span className="textColor">Duracion: </span>
-            {productos.duracion}
-          </li>
-          <li>
-            <span className="textColor">Formato: </span>
-            {productos.formato}
-          </li> */}
+          
         </ul>
-        {/* <Button variant="danger" onClick={handleShowRemove}>
-          Delete Game
-        </Button>
-        <Modal show={remove} onHide={handleCloseRemove}>
-          <Modal.Header closeButton>
-            <Modal.Title>You Sure?</Modal.Title>
-          </Modal.Header>
-          <Modal.Body><DeleteGames></DeleteGames></Modal.Body>
-          <Modal.Footer>
-            <Button variant="primary" onClick={handleCloseRemove}>
-              Nope
-            </Button>
-          </Modal.Footer>
-        </Modal>
-        <Button variant="primary" onClick={handleShowUpdate}>
-        Update Game
-      </Button>
-      <Modal show={update} onHide={handleCloseUpdate}>
-        <Modal.Header closeButton>
-          <Modal.Title>Update Game</Modal.Title>
-        </Modal.Header>
-        <Modal.Body><UpdateGame></UpdateGame></Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseUpdate }>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal> */}
+       
       </Card.Body>
     </Card>
   );

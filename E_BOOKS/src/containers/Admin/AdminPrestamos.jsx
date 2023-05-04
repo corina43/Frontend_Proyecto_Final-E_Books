@@ -33,8 +33,8 @@ export const AdminPrestamos = () => {
                 .then(
                     result => {
 
-                        setPrestamos(result.data.data.prestamos)                      
-                        console.log(result.data.data.prestamos, "hola result")
+                        setPrestamos(result.data.data)                      
+                        console.log(result.data.data, "hola result")
                     }
                 )
                 .catch(error => console.log(error))
@@ -67,43 +67,43 @@ const selected = (prestamo) => {
 );
 }
 
-{/* <div className="usersDesign">
-  <h3>Prestamos existentes:</h3>
-     {prestamos.length > 0 ? (
-        <Row xs={1} md={2} lg={5}>
-          {prestamos.map((prestamo) => {
-            return (
-              <Col key={prestamo.id}>
-                <Card className="card my-3">
-           <ListGroup variant="flush"> 
-            <ListGroup.Item>
-              <div className="text1">ID pRODUCTO:</div>
-              <div className="text2"> {prestamo.id_producto}</div>
-            </ListGroup.Item>
+//  <div className="usersDesign">
+//   <h3>Prestamos existentes:</h3>
+//      {prestamos.length > 0 ? (
+//         <Row xs={1} md={2} lg={5}>
+//           {prestamos.map((prestamo) => {
+//             return (
+//               <Col key={prestamo.id}>
+//                 <Card className="card my-3">
+//            <ListGroup variant="flush"> 
+//             <ListGroup.Item>
+//               <div className="text1">ID pRODUCTO:</div>
+//               <div className="text2"> {prestamo.id_producto}</div>
+//             </ListGroup.Item>
           
-            <ListGroup.Item>
-              <div className="text1"> Fecha inicio: </div>
-              <div className="text2"> {prestamo.fecha_inicio}</div>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <div className="text1"> Fecha fin: </div>
-              <div className="text2"> {prestamo.fecha_fin}</div>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <div className="text1"> Puntuacion: </div>
-              <div className="text2"> {prestamo.puntuacion}</div>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <div className="text1">Comentario </div>
-              <div className="text2"> {prestamo.comentario_producto}</div>
-            </ListGroup.Item>
-          </ListGroup>
-        </Card>
+//             <ListGroup.Item>
+//               <div className="text1"> Fecha inicio: </div>
+//               <div className="text2"> {prestamo.fecha_inicio}</div>
+//             </ListGroup.Item>
+//             <ListGroup.Item>
+//               <div className="text1"> Fecha fin: </div>
+//               <div className="text2"> {prestamo.fecha_fin}</div>
+//             </ListGroup.Item>
+//             <ListGroup.Item>
+//               <div className="text1"> Puntuacion: </div>
+//               <div className="text2"> {prestamo.puntuacion}</div>
+//             </ListGroup.Item>
+//             <ListGroup.Item>
+//               <div className="text1">Comentario </div>
+//               <div className="text2"> {prestamo.comentario_producto}</div>
+//             </ListGroup.Item>
+//           </ListGroup>
+//         </Card>
                
-                 </Col>
-            );
-          })}
-        </Row> */}
+//                  </Col>
+//             );
+//           })}
+//         </Row> 
 //       ) : (
         
 //         <div>ESTAN VINIENDO</div>

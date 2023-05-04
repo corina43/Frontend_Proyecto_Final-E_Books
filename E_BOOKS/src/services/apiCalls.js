@@ -75,19 +75,27 @@ export const getAll = async () => {
   }
 };
 export const getAllPrestamos = async () => {
-  try {
-    let res = await axios.get(`${root}/usuarios/prestamos`);
-    return res.data;
-  } catch (error) {
-    console.error(error);
-  }
+  const config = {
+    headers: {'Authorization': 'Bearer '+ token, }
+    
+  };
+  return await axios.get(`${root}/usuarios/prestamos`, config)
 };
-export const ObtenerHistorialPrestamos = async (email) => {
-  try {
-    let res = await axios.get(`${root}/prestamos/historial/${id_usuario}}`);
-    return res.data;
-  } catch (error) {
-    console.error(error);
-    throw new Error('No se pudo obtener el historial de préstamos.');
-  }
+
+
+//   try {
+//     let res = await axios.get(`${root}/usuarios/prestamos`,config);
+//     return res.data;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+export const getPrestamos = async (token) => {
+  const config = {
+    headers: {'Authorization': 'Bearer '+ token, }
+    
+  };
+  return await axios.get(`${root}/prestamos`, config)
 };
+
+

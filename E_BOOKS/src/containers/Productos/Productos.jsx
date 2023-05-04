@@ -20,11 +20,11 @@ export const Productos = () => {
       getAll(ReduxCredentials?.credentials?.token)
         .then(
           result => {
-            console.log("Resultado completo:", result);
+            console.log("Resultado completo:", result.data);
           
 
-            setProductos(result)
-            console.log(result,"hiiiiiiiiiiiii")
+            setProductos(result.data)
+            console.log(result.data,"hiiiiiiiiiiiii")
           }
         )
         .catch(error => console.log(error));

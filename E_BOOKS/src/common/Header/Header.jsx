@@ -26,6 +26,7 @@ import Nav from "react-bootstrap/Nav";
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
+              
               <Nav.Link as={Link} to="/">
                 Home
               </Nav.Link>
@@ -43,6 +44,7 @@ import Nav from "react-bootstrap/Nav";
                   <Nav.Link as={Link} to="/" onClick={() => logout()}>
                      Logout
                   </Nav.Link>
+                  
                   <Nav.Link as={Link} to="/usuarios">
                      Profile
                   </Nav.Link>
@@ -51,14 +53,13 @@ import Nav from "react-bootstrap/Nav";
                       Profile Update</NavDropdown.Item>
                  </NavDropdown>
                   <NavDropdown title="miInformacion" id="basic-nav-dropdown">
-                    <NavDropdown.Item as={Link} to="/prestamos/historial/:id_usuario">
+                    <NavDropdown.Item as={Link} to="/prestamos">
                       Mis Prestamos</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="/productos">
                        Productos</NavDropdown.Item>
                   </NavDropdown>
-                  {/* <Nav.Link as={Link} to="/games/favourites">
-                    Get Favourites Games
-                  </Nav.Link> */}
+                  
+              
                   <Nav.Link as={Link} to="/productos/titulo">
                    Libros por titulo
                   </Nav.Link>
