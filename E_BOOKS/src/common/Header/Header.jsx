@@ -58,6 +58,9 @@ import Nav from "react-bootstrap/Nav";
                     <NavDropdown.Item as={Link} to="/productos">
                        Productos</NavDropdown.Item>
                   </NavDropdown>
+                  <Nav.Link as={Link} to="/prestamos/crearprestamos">
+                    Crear Prestamo
+                  </Nav.Link>
                   
               
                   <Nav.Link as={Link} to="/productos/titulo">
@@ -80,8 +83,9 @@ import Nav from "react-bootstrap/Nav";
                     <NavDropdown.Item as={Link} to="/usuarios/todos">
                     Todos los usuarios </NavDropdown.Item>
                       <NavDropdown.Item as={Link} to="/usuarios/prestamos">
+                      Todos los Prestamos</NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to="/prestamos">
                       Prestamos</NavDropdown.Item>
-                   
                     <NavDropdown.Item as={Link} to="/productos">
                       Productos</NavDropdown.Item>
                       </NavDropdown>

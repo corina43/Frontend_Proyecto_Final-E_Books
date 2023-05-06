@@ -13,6 +13,7 @@ import { AdminPrestamos } from '../Admin/AdminPrestamos';
 import VistaProductos from '../VistaProductos/VistaProductos';
 import { Prestamos } from '../Prestamos/Prestamos';
 
+import CrearPrestamo from '../CreatePrestamo/CreatePrestamo';
 
 
 
@@ -32,6 +33,7 @@ export const Body =() =>{
   <Route path="/productos" element={<Productos />} />
   <Route path="/Vistaproductos" element={<VistaProductos />} />
   <Route path="/prestamos" element={<Prestamos />} /> 
+  <Route path="/prestamos/crearprestamos" element={<CrearPrestamo />} /> 
   {/* <Route path="/prestamos/historial/:id_usuario" element={<PrestamosHistorialWrapper />} /> */}
   {/* <Route path="/home" element={<Home />} /> */}
        

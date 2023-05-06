@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { getAll } from "../../services/apiCalls";
+import { userData } from "../../containers/User/userSlice";
+import { Col, Container, Row } from "react-bootstrap";
+import BookCard from "../../common/BookCard/BookCard";
+import { addChoosen } from "../../containers/Detail/detailSlice";
 const VistaProductos = () => {
   const root = "http://localhost:3009"
   const [productos, setProductos] = useState([]);
@@ -46,6 +52,11 @@ const VistaProductos = () => {
     getProductByTitulo(search);
   };
 
+  const selected = (prestamo) => {
+    dispatch(addChoosen({ choosenObject: prestamo }))
+    console.log(prestamo,'tengo sueño')
+   
+  }
   return (
     <div>
       <h1>Productos</h1>
@@ -68,6 +79,7 @@ const VistaProductos = () => {
     </div>
   );
 };
+
 
 export default VistaProductos;
 

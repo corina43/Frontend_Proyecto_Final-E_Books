@@ -8,7 +8,7 @@ import { getAllPrestamos } from '../../services/apiCalls';
 import './Admin.css'
 import { Col, Container, ListGroup } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-// import CardDeck from 'react-bootstrap/CardDeck';
+import PrestamosCard from '../../common/PrestamosCard/PrestamosCard'
 import Row from 'react-bootstrap/Row';
 import { addChoosen } from "../../containers/Detail/detailSlice";
 import { detailPrestamo } from '../../containers/Detail/detailSlice';
@@ -33,18 +33,18 @@ export const AdminPrestamos = () => {
                 .then(
                     result => {
 
-                        setPrestamos(result.data.data)                      
-                        console.log(result.data.data, "hola result")
+                        setPrestamos(result.data)                      
+                        console.log(result.data, "hola result")
                     }
                 )
                 .catch(error => console.log(error))
 
         }
     }, [prestamos]);
-console.log(prestamos, "sou prestamos")
+console.log(prestamos, "soi prestamos")
 const selected = (prestamo) => {
     dispatch(addChoosen({ choosenObject: prestamo }))
-    console.log(prestamo)
+    console.log(prestamo,"ssssssssssss")
    
   }
 
@@ -56,7 +56,7 @@ const selected = (prestamo) => {
           console.log(prestamo, "hola soy libro");
           return (
             <Col onClick={() => selected(prestamo)} key={prestamos.id}>
-              <Card prestamos={prestamo} />
+              <PrestamosCard prestamos={prestamo} />
           
             </Col>
           );
