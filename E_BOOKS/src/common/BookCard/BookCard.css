@@ -30,7 +30,7 @@
   }
   
   .cardDesign::before {
-    /* content: url(../../assets/x-square.svg); */
+  
     display: flex;
     justify-content: flex-end;
     padding: 0.2em 0.5em 0 0;

@@ -5,10 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 // import { createPrestamo } from "../../actions/prestamoActions";
 import { CreatePrestamo } from "../../services/apiCalls"; 
-//import { setAlert } from "../../actions/alertActions";
 import { Form, Button, Card, Row, Col, FormGroup } from "react-bootstrap";
 import { userData } from "../User/userSlice";
 import { InputText } from "../../common/InputText/InputText";
+import './CreatePrestamo.css'
 export const newPrestamo = () => {
 
     
@@ -27,26 +27,6 @@ export const newPrestamo = () => {
   });
   
 
-//   const [NewPrestamoError, setNewPrestamoError] = useState({
-//     idError: "",
-//     id_usuarioError: "",
-//     id_productoError: "",
-//     fecha_inicioError: "",
-//     fecha_finError: "",
-//     puntuacionError: "",
-//     comentario_productoError: "",
-  
-//   });
-
-//   const [valiNewPrestamo, setValiNewPrestamo] = useState({
-//     idVali: false,
-//     id_usuarioVali: false,
-//     id_productoVali: false,
-//     fecha_inicioVali: false,
-//     fecha_finVali: false,
-//     puntuacionVali: false,
-//     comentario_productoVali: false,
-// });
 
 const [backendMessage, setBackendMessage] = useState("");
 
@@ -139,10 +119,10 @@ return (
                 <InputText
                   className= "inputBasicDesign"
                 
-                  type={"datetime-local"}
-                //   name={"release_date"}
-                  maxLength={64}
-                  placeholder={"Enter release_date"}
+                
+                  type="date"
+                  name="fecha_inicio"
+                  id="fecha_inicio"
                   required={true}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
@@ -152,12 +132,11 @@ return (
                 <Form.Label>Fecha fin:</Form.Label>
                 <InputText
                   className= "inputBasicDesign"
-                  
-                  type={"date"}
-                //   name={"release_date"}
-                  maxLength={64}
-                  placeholder={"Enter release_date"}
+                  type="date"
+                  name="fecha_fin"
+                  id="fecha_fin"
                   required={true}
+               
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
                 />
@@ -167,10 +146,10 @@ return (
                 <InputText
                   className= "inputBasicDesign"
                
-                  type={"float"}
-                  name={"score"}
+                  type={"integer"}
+                  name={"puntuacion"}
                   maxLength={50}
-                  placeholder={"Enter score game"}
+                  placeholder={"Enter puntuacion"}
                   required={true}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
@@ -181,8 +160,8 @@ return (
                 <InputText
                   className= "inputBasicDesign"
                      
-                  type={"float"}
-                  name={"score"}
+                  type={"text"}
+                  name={"comentario_producto"}
                   maxLength={50}
                   placeholder={"Enter comentario"}
                   required={true}

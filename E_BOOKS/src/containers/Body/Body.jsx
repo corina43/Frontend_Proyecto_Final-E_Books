@@ -34,8 +34,7 @@ export const Body =() =>{
   <Route path="/Vistaproductos" element={<VistaProductos />} />
   <Route path="/prestamos" element={<Prestamos />} /> 
   <Route path="/prestamos/crearprestamos" element={<CrearPrestamo />} /> 
-  {/* <Route path="/prestamos/historial/:id_usuario" element={<PrestamosHistorialWrapper />} /> */}
-  {/* <Route path="/home" element={<Home />} /> */}
+
        
        
        

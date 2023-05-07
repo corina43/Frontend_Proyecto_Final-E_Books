@@ -48,20 +48,26 @@ export const Prestamos = (id_usuario) => {
     <>
    
     {prestamos.map((prestamo) => (
-    
+    // <Card className='tarjeta'>
   <div className="tarjeta" key={prestamo.id}>
     <img className="tarjeta-img-top" src={prestamo.Producto.poster_path} alt={prestamo.Producto.titulo} />
     <div className="tarjeta-body">
+      
       <h5 className="tarjeta-header">{prestamo.Producto.titulo}</h5>
+      <span className="textColor">Fecha inicio - fin: </span>
       <p className="card-text">{prestamo.fecha_inicio} - {prestamo.fecha_fin}</p>
+      
+      <span className="textColor">Comentario: </span>
       <p className="card-text">{prestamo.comentario_producto}</p>
     </div>
     <div className="tarjeta-footer">
       <FontAwesomeIcon icon={faStar} />
       <p className="card-text">{prestamo.puntuacion}</p>
+      
     </div>
+   
   </div>
- 
+  // </Card>
 ))}
 
   </>
