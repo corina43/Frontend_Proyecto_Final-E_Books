@@ -40,12 +40,7 @@ export const Admin = () => {
         }
     }, [usuarios]);
     
-    // const selected = (persona) => {
-    //   dispatch(addChoosen({ choosenObject: persona }))
-    //   setTimeout(() => {
-    //     navigate("/prestamos/historial/id_usuario");
-    //   }, 500);
-    // }
+    
 console.log(usuarios, "sou users")
     return (
         

@@ -79,11 +79,12 @@ export const Home = () => {
 
   const searchBook = (evt) => {
     if (evt.key === "Enter") {
-      axios
-        .get(
+      console.log(evt.key,'ggggggggggggg')
+      axios.get(
           `https://www.googleapis.com/books/v1/volumes?q=${search}&key=AIzaSyC15ChLKEFQXxkXltYYU3jbGetZ6LmdUC0`
         )
         .then((res) => setData(res.data.items))
+        console.log(res.data,'nnnnnnnnnn')
         .catch((err) => console.log(err));
     }
   };
@@ -101,8 +102,11 @@ export const Home = () => {
               type="text"
               placeholder="Ingresa el nombre de tu libro"
               value={search}
+            
               onChange={(e) => setSearch(e.target.value)}
-              onKeyPress={searchBook}
+              
+              onKeyDown={searchBook}
+             
             />
             <button>
               <i className="fas fa-search"></i>
@@ -113,9 +117,10 @@ export const Home = () => {
       </div>
 
       <div className="container">
+        
         <LibrosCard book={bookData} />
       </div>
     </>
-  );
+  )
 };
 

@@ -7,13 +7,14 @@ import { Productos } from '../Productos/Productos';
 
 import { Usuarios } from '../Profile/Profile';
 import { Admin } from '../Admin/Admin';
-//import  { PrestamosHistorialWrapper } from '../Prestamos/Prestamos';
+
 import { AdminPrestamos } from '../Admin/AdminPrestamos';
 import {Home} from '../../containers/Home/Home'
 import VistaProductos from '../VistaProductos/VistaProductos';
 import { Prestamos } from '../Prestamos/Prestamos';
 
 import CrearPrestamo from '../CreatePrestamo/CreatePrestamo';
+import DeleteUser from '../Admin/AdminDelete';
 
 
 
@@ -30,6 +31,7 @@ export const Body =() =>{
   <Route path="/usuarios" element={<Usuarios />} />
   <Route path="/usuarios/todos" element={<Admin />} />
   <Route path="/usuarios/prestamos" element={<AdminPrestamos />} />
+  <Route path="/usuarios/delete" element={<DeleteUser />} />
   <Route path="/productos" element={<Productos />} />
   <Route path="/Vistaproductos" element={<VistaProductos />} />
   <Route path="/prestamos" element={<Prestamos />} /> 
