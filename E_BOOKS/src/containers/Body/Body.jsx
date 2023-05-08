@@ -4,12 +4,12 @@ import {  Routes, Route } from 'react-router-dom';
 import { Register } from '../Register/Register';
 import { Login } from '../Login/Login';
 import { Productos } from '../Productos/Productos';
-import {Home} from '../../containers/Home/Home'
+
 import { Usuarios } from '../Profile/Profile';
 import { Admin } from '../Admin/Admin';
 //import  { PrestamosHistorialWrapper } from '../Prestamos/Prestamos';
 import { AdminPrestamos } from '../Admin/AdminPrestamos';
-
+import {Home} from '../../containers/Home/Home'
 import VistaProductos from '../VistaProductos/VistaProductos';
 import { Prestamos } from '../Prestamos/Prestamos';
 

@@ -1,31 +1,10 @@
-/* @import url("https://fonts.googleapis.com/css?family=Inconsolata");
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inconsolata';
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Poppins:wght@300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
-
-.App {
-  background-color: #ffe083;
-  min-height: 100vh;
+:root{
+    --primary-color:rgb(25, 197, 191);
+    --secondary-color:rgb(100, 208, 230);
 }
-
-.loader {
-    width: 48px;
-    height: 48px;
-    border: 5px solid #000;
-    border-bottom-color: #FFF;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    }
-
-    @keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-    }  */
