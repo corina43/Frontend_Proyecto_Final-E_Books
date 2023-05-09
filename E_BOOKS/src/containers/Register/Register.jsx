@@ -50,11 +50,6 @@ export const Register = () => {
       apellidoValido: false,
       emailValido: false,
       fecha_nacimientoValido: false,
-      // fecha_registroValido: false,
-      // ciudadValido: false,
-      // paisValido: false,
-      // generos_preferidosValido: false,
-      // biografiaValido: false,
       passwordValido: false
     });
   console.log(credencialesValido)
@@ -65,13 +60,11 @@ export const Register = () => {
       setCredenciales((prevState) => ({
         ...prevState,
         [e.target.name]: e.target.value,
-        //Este método hace una copia del estado del componente con spread para no tener que mutar el estado original,
-        //posteriormente, mediante la técnica de diccionario de JS, asignamos el valor del input que esté escribiendose
-        //EN ESE MOMENTO a la parte correspondiente del Hook.
+      
       }));
     };
   
-    //Funciones de ciclo de vida del componente, conocidas como useEffect
+  
    // 3 - Ejecutamos los useEffect
   
    useEffect(() => {

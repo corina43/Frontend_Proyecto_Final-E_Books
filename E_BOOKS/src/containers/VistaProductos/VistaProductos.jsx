@@ -4,9 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getAll } from "../../services/apiCalls";
 import { userData } from "../../containers/User/userSlice";
-import { Col, Container, Row } from "react-bootstrap";
+import { Card, CardGroup, CardImg, Col, Container, Row } from "react-bootstrap";
 import BookCard from "../../common/BookCard/BookCard";
 import { addChoosen } from "../../containers/Detail/detailSlice";
+import './VistaProductos.css';
+
+
+
 const VistaProductos = () => {
   const root = "http://localhost:3009"
   const [productos, setProductos] = useState([]);
@@ -57,6 +61,27 @@ const VistaProductos = () => {
     console.log(prestamo,'tengo sueño')
    
   }
+  // return (
+  //   <div>
+  //     <h1>Productos</h1>
+  //     <form onSubmit={handleSubmit}>
+  //       <input
+  //         type="text"
+  //         value={search}
+  //         onChange={handleSearch}
+  //         placeholder="Buscar por título"
+  //       />
+  //       <button type="submit">Buscar</button>
+  //     </form>
+  //     <ul>
+  //       {productos.map((producto) => (
+  //         <li key={producto.id}>
+  //           {producto.titulo} - {producto.autor}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   </div>
+  // );
   return (
     <div>
       <h1>Productos</h1>
@@ -69,13 +94,16 @@ const VistaProductos = () => {
         />
         <button type="submit">Buscar</button>
       </form>
-      <ul>
+      <div className="book-card-container">
         {productos.map((producto) => (
-          <li key={producto.id}>
-            {producto.titulo} - {producto.autor}
-          </li>
+          <CardImg variant="top" src={producto.poster_path}
+          style={{ width: "18rem" }}
+            key={producto.id}
+            titulo={producto.titulo}
+            autor={producto.autor}
+          />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
