@@ -152,3 +152,18 @@ Primero, se clonó el proyecto desde un repositorio remoto de Git y se instaló 
 Posteriormente, se configuraron los archivos de configuración para permitir la comunicación con el servidor backend, utilizando la biblioteca de JavaScript axios para simplificar la comunicación HTTP.
 
 A continuación, se trabajó en el diseño de la interfaz de usuario, utilizando Bootstrap React como marco de trabajo. Además, se agregaron algunos componentes personalizados y se diseñó el esquema de colores y estilos.
+
+### Acceso a la aplicación
+
+
+
+Datos de acceso como administrador: 
+
+> Mail: corina@example.com // Password: corina123
+
+Datos de acceso como usuario: 
+
+> Mail: alyna@gmail.com // Password: alyna123
+
+
+
