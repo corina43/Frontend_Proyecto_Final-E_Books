@@ -163,7 +163,7 @@ Datos de acceso como administrador:
 
 Datos de acceso como usuario: 
 
-> Mail: alyna@gmail.com // Password: alyna123
+> Mail: alyna@example.com // Password: alyna123
 
 
 
