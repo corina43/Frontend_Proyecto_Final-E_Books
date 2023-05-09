@@ -57,10 +57,12 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
+    justify-content: center;
   }
   
   .book-card-container .card {
     width: 18rem;
+   
   }
   
   .book-card-container .card img {
@@ -76,6 +78,7 @@
   .book-card-container .card-body ul {
     list-style: none;
     padding: 0;
+   
   }
   
   .book-card-container .card-body ul li {
@@ -84,6 +87,6 @@
   
   .textColor {
     font-weight: bold;
-    color: #007bff;
+    color: #0b0b0b;
   }
   
