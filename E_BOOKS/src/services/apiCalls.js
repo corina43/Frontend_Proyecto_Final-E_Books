@@ -49,8 +49,17 @@ export const createUserProfile = async (body) => {
     
   // }
   // console.log(_body)
-  return await await axios.post(`${root}/auth/register`, body)
+  return await axios.post(`${root}/auth/register`, body)
   // console.log(res)
+};
+
+export const editarPerfil = async (body, token) => {
+  let config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return await axios.put(`${root}/perfil`, body, config);
 };
 
 export const verUsuarios = async (token) => {

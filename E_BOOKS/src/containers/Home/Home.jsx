@@ -66,7 +66,6 @@
 
 
 
-
 import React, { useState } from "react";
 import { LibrosCard } from "../../common/LibrosCard/LibrosCard";
 
@@ -123,4 +122,3 @@ export const Home = () => {
     </>
   )
 };
-

@@ -45,11 +45,11 @@ import Nav from "react-bootstrap/Nav";
                      Logout
                   </Nav.Link>
                   
-                  <Nav.Link as={Link} to="/usuarios">
+                  <Nav.Link as={Link} to="/usuarios/profile">
                      Profile
                   </Nav.Link>
                   <NavDropdown title="Profile Update" id="basic-nav-dropdown">
-                    <NavDropdown.Item as={Link} to="/profile/update">
+                    <NavDropdown.Item as={Link} to="/usuarios/perfil">
                       Profile Update</NavDropdown.Item>
                  </NavDropdown>
                   <NavDropdown title="miInformacion" id="basic-nav-dropdown">
@@ -63,7 +63,7 @@ import Nav from "react-bootstrap/Nav";
                   </Nav.Link>
                   
               
-                  <Nav.Link as={Link} to="/productos/titulo">
+                  <Nav.Link as={Link} to="/Vistaproductos">
                    Libros por titulo
                   </Nav.Link>
                 </>
@@ -73,7 +73,7 @@ import Nav from "react-bootstrap/Nav";
                      Logout
                   </Nav.Link>
                   <NavDropdown title="Profile" id="basic-nav-dropdown">
-                    <NavDropdown.Item as={Link} to="/usuarios">
+                    <NavDropdown.Item as={Link} to="/usuarios/profile">
                       Profile</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="/profile/update">
                       Profile Update</NavDropdown.Item>
@@ -93,7 +93,7 @@ import Nav from "react-bootstrap/Nav";
                       </NavDropdown>
                    
                   <Nav.Link as={Link} to="/Vistaproductos">
-                    Nuevos Libros
+                     Libros por titulo
                   </Nav.Link>
                
                 </>
