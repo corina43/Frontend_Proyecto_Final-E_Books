@@ -61,38 +61,18 @@ const VistaProductos = () => {
     console.log(prestamo,'tengo sueño')
    
   }
-  // return (
-  //   <div>
-  //     <h1>Productos</h1>
-  //     <form onSubmit={handleSubmit}>
-  //       <input
-  //         type="text"
-  //         value={search}
-  //         onChange={handleSearch}
-  //         placeholder="Buscar por título"
-  //       />
-  //       <button type="submit">Buscar</button>
-  //     </form>
-  //     <ul>
-  //       {productos.map((producto) => (
-  //         <li key={producto.id}>
-  //           {producto.titulo} - {producto.autor}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   </div>
-  // );
+  
   return (
     <div>
       <h1>Productos</h1>
-      <form onSubmit={handleSubmit}>
-        <input
+      <form className='formProductos' onSubmit={handleSubmit}>
+        <input className='inputProductos'
           type="text"
           value={search}
           onChange={handleSearch}
           placeholder="Buscar por título"
         />
-        <button type="submit">Buscar</button>
+        <button className='btnProductos' type="submit">Buscar</button>
       </form>
       <div className="book-card-container">
         {productos.map((producto) => (

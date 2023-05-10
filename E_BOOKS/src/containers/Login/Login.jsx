@@ -99,7 +99,7 @@ export const Login = () => {
             />
           </Form.Group>
 
-          <Button variant="primary " onClick={() => logeame()}>
+          <Button className="btnLogin" variant="primary " onClick={() => logeame()}>
             {""}
             Iniciar sesión
           </Button>
