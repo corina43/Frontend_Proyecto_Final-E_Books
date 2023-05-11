@@ -32,7 +32,6 @@
   }
   
   .titleNavBar {
-    /* color: #172b4d; */
     color: #19407b;
     font-size: 1.5rem;
     font-weight: bold;
@@ -81,12 +80,11 @@
       width: 39px;
       height: 39px;
     }
-    .titleNavBar {
-      /* color: #172b4d; */
+    /* .titleNavBar {
       color: #19407b;
       font-size: 1.2rem;
       font-weight: bold;
-    }
+    } */
     .logo h2 {
       font-weight: 300px;
     }

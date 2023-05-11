@@ -32,9 +32,6 @@ export const Logo = () => {
                 
               </div>
               <div className="textoLogo col-md-7 col-lg-7 col-xl-6 col-xxl-5 d-none d-md-block">
-                {/* <h5>
-                  E_BOOKS_friends: sumérjase en la magia de los libros de ayer y hoy entre amigos y comparta sus experiencias.
-                </h5> */}
               </div>
             </div>
           </div>

@@ -12,7 +12,9 @@ body{
     background-color: var(--primary-color);
 }
 html{
-    font-size: 75.5%;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
 }
 .header{
     width: 100%;
