@@ -15,6 +15,7 @@ import { Prestamos } from '../Prestamos/Prestamos';
 
 import CrearPrestamo from '../CreatePrestamo/CreatePrestamo';
 import  { DeleteUsuarios } from '../Admin/AdminDelete';
+import { EditarPerfil } from '../Profile/ProfileUpdate';
 
 
 
@@ -30,7 +31,7 @@ export const Body =() =>{
   <Route path="/register" element={<Register />} />
   <Route path="/login" element={<Login />} />
   <Route path="/usuarios/profile" element={<Usuarios />} />
-  <Route path="/usuarios/perfil" element={<Usuarios />} />
+  <Route path="/usuarios/perfil" element={<EditarPerfil />} />
   <Route path="/usuarios/todos" element={<Admin />} />
   <Route path="/usuarios/prestamos" element={<AdminPrestamos />} />
   <Route path="/usuarios/delete/${id}" element={<DeleteUsuarios />} />

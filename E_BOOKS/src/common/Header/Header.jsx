@@ -75,7 +75,7 @@ import Nav from "react-bootstrap/Nav";
                   <NavDropdown title="Profile" id="basic-nav-dropdown">
                     <NavDropdown.Item as={Link} to="/usuarios/profile">
                       Profile</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/profile/update">
+                    <NavDropdown.Item as={Link} to="/usuarios/perfil">
                       Profile Update</NavDropdown.Item>
                   
                   </NavDropdown>

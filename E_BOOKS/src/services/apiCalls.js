@@ -59,7 +59,7 @@ export const editarPerfil = async (body, token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-  return await axios.put(`${root}/perfil`, body, config);
+  return await axios.put(`${root}/usuarios/perfil`, body, config);
 };
 
 export const verUsuarios = async (token) => {

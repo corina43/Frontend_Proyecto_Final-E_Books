@@ -1,106 +1,102 @@
 import React, { useEffect, useState } from "react";
-import { userData } from "../../userSlice";
+import { userData } from "../User/userSlice";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { validate } from "../../../helpers/useful";
-import { verUsuariosPerfil, editarPerfil} from "../../services/apiCalls";
+import { validate } from "../../common/helpers/usefull";
+import { verUsuariosPerfil, editarPerfil } from "../../services/apiCalls";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
-import { InputText } from "../../../components/InputText/InputText";
-
-export const editarPerfil = (onEditarPerfil) => {
-  const  ReduxCredentials = useSelector(userData);
+import { InputText } from "../../common/InputText/InputText";
+import './ProfileUpdate.css'
+export const EditarPerfil = ({ onEditarPerfil }) => {
+  const ReduxCredentials = useSelector(userData);
   const navigate = useNavigate();
 
-  const [usuarios, setUsuarios] = useState([]);
-  
+  const [usuarios, setUsuarios] = useState({});
+  const [usuario, setUsuario] = useState({
+    nombre: "",
+    apellido: "",
+    email: "",
+    fecha_nacimiento: "",
+    fecha_registro: "",
+    ciudad: "",
+    pais: "",
+    generos_preferidos: "",
+    biografia: "",
+  });
 
-  const inputHandler = (e) => {
-    setUser((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  const [valiusuario, setValiusuario] = useState({
-      nombreVali: true,
-       apellidoVali: true,
-       emailVali: true,
-       fecha_nacimientoVali: true,
-       fecha_registroVali: true,
-       ciudadVali: true,
-       paisVali: true,
-       generos_preferidosVali: true,
-       biografiaVali: true,
-
-
+  const [valiUsuario, setValiUsuario] = useState({
+    nombreVali: true,
+    apellidoVali: true,
+    emailVali: true,
+    fecha_nacimientoVali: true,
+    fecha_registroVali: true,
+    ciudadVali: true,
+    paisVali: true,
+    generos_preferidosVali: true,
+    biografiaVali: true,
   });
 
   const [usuarioError, setUsuarioError] = useState({
-       nombreError: true,
-       apellidoError: true,
-       emailError: true,
-       fecha_nacimientoError: true,
-       fecha_registroError: true,
-       ciudadError: true,
-       paisError: true,
-       generos_preferidosError: true,
-       biografiaError: true,
+    nombreError: "",
+    apellidoError: "",
+    emailError: "",
+    fecha_nacimientoError: "",
+    fecha_registroError: "",
+    ciudadError: "",
+    paisError: "",
+    generos_preferidosError: "",
+    biografiaError: "",
   });
 
   const [registerAct, setRegisterAct] = useState(false);
   const [welcome, setWelcome] = useState("");
+
   useEffect(() => {
-    for (let error in userError) {
-      if (userError[error] != "") {
+    for (let error in usuarioError) {
+      if (usuarioError[error] !== "") {
         setRegisterAct(false);
         return;
       }
     }
 
-    for (let empty in user) {
-      if (user[empty] === "") {
+    for (let empty in usuario) {
+      if (usuario[empty] === "") {
         setRegisterAct(false);
         return;
       }
     }
 
-    for (let validated in valiuser) {
-      if (valiuser[validated] === false) {
+    for (let validated in valiUsuario) {
+      if (valiUsuario[validated] === false) {
         setRegisterAct(false);
         return;
       }
     }
+
     setRegisterAct(true);
-  });
+  }, [usuario, usuarioError, valiUsuario]);
 
   const checkError = (e) => {
-    let error = "";
-    let checked = validate(
-      e.target.name,
-      e.target.value,
-      e.target.required
-    );
+    const { name, value, required } = e.target;
+    const checked = validate(name, value, required);
 
-    error = checked.message;
-    setValiusuario((prevState) => ({
+    setValiUsuario((prevState) => ({
       ...prevState,
-      [e.target.name + "Vali"]: checked.validated,
+      [name + "Vali"]: checked.validated,
     }));
 
     setUsuarioError((prevState) => ({
       ...prevState,
-      [e.target.name + "Error"]: error,
+      [name + "Error"]: checked.message,
     }));
   };
+
   useEffect(() => {
-    if (usuarios.length === 0) {
-        console.log(ReduxCredentials?.credentials?.token)
+    if (Object.keys(usuarios).length === 0) {
       verUsuariosPerfil(ReduxCredentials?.credentials?.token)
         .then((result) => {
-          console.log(result.data,"holaaaaaaaaaa");
-          console.log("esto es nOMBRE", result.data.apellido);
-          setUsuarios({
-
+          setUsuarios(result.data);
+          setUsuario({
             nombre: result.data.nombre,
             apellido: result.data.apellido,
             email: result.data.email,
@@ -111,35 +107,174 @@ export const editarPerfil = (onEditarPerfil) => {
             generos_preferidos: result.data.generos_preferidos,
             biografia: result.data.biografia,
           });
-        setUsuarios(result.data)
-        console.log("esto es resulatado", result.data.biografia);
-    }
-)
-        
+        })
         .catch((error) => console.log(error));
-    };
-  }, [usuarios]);
-  console.log(usuarios, "usuarios info");
-}
+    }
+  }, [usuarios, ReduxCredentials]);
 
-
-
-
-
-
-
-const updateUser = () => {
-  try {
-    profileUpdate(user, userRedux.credentials.token);
-    setWelcome(`Correctly Updated Profile`);
-    setTimeout(() => {
-      onProfileUpdate();
-    }, 1500);
-  } catch (error) {
-    setWelcome(`Updated Profile Error`);
-    setTimeout(() => {
-      onProfileUpdate();
-    }, 1500);
-  }
-};
-
+  const updateUser = () => {
+    try {
+      editarPerfil(usuario, ReduxCredentials?.credentials?.token);
+      setWelcome("Perfil actualizado correctamente");
+      setTimeout(() => {
+        onEditarPerfil();
+      }, 1500);
+    } catch (error) {
+      setWelcome("Error al actualizar el perfil");
+      setTimeout(() => {
+        onEditarPerfil();
+      }, 1500);
+    }
+  };
+  
+  return (
+    <>
+      <div>
+        {welcome !== "" ? (
+          <div className="divWellcome">
+            <Card>
+              <Card.Header>{welcome}</Card.Header>
+            </Card>
+          </div>
+        ) : (
+          <div>
+            <Container>
+              <Row className="updateProfile">
+                <Col>
+                  <Form>
+                    <Form.Group>
+                      <Form.Label>Nombre:</Form.Label>
+                      <InputText
+                        className={"inputLogin"}
+                        type={"text"}
+                        name={"nombre"}
+                        maxLength={70}
+                        placeholder={usuarios.nombre}
+                        changeFunction={(e) => inputHandler(e)}
+                        blurFunction={(e) => checkError(e)}
+                      />
+                      <div>{usuarioError.nombreError}</div>
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Apellido:</Form.Label>
+                      <InputText
+                        className={"inputLogin"}
+                        type={"text"}
+                        name={"apellido"}
+                        maxLength={70}
+                        placeholder={usuarios.apellido}
+                        changeFunction={(e) => inputHandler(e)}
+                        blurFunction={(e) => checkError(e)}
+                      />
+                      <div>{usuarioError.apellidoError}</div>
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Email:</Form.Label>
+                      <InputText
+                        className={"inputLogin"}
+                        type={"email"}
+                        name={"email"}
+                        maxLength={70}
+                        placeholder={usuarios.email}
+                        changeFunction={(e) => inputHandler(e)}
+                        blurFunction={(e) => checkError(e)}
+                      />
+                      <div>{usuarioError.emailError}</div>
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Fecha de nacimiento:</Form.Label>
+                      <InputText
+                        className={"inputLogin"}
+                        type={"date"}
+                        name={"fecha_nacimiento"}
+                        placeholder={usuarios.fecha_nacimiento}
+                        changeFunction={(e) => inputHandler(e)}
+                        blurFunction={(e) => checkError(e)}
+                      />
+                      <div>{usuarioError.fecha_nacimientoError}</div>
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Fecha de registro:</Form.Label>
+                      <InputText
+                        className={"inputLogin"}
+                        type={"date"}
+                        name={"fecha_registro"}
+                        maxLength={70}
+                        placeholder={usuarios.fecha_registro}
+                        changeFunction={(e) => inputHandler(e)}
+                        blurFunction={(e) => checkError(e)}
+                      />
+                      <div>{usuarioError.fecha_registroError}</div>
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Ciudad:</Form.Label>
+                      <InputText
+                        className={"inputLogin"}
+                        type={"text"}
+                        name={"ciudad"}
+                        maxLength={70}
+                        placeholder={usuarios.ciudad}
+                        changeFunction={(e) => inputHandler(e)}
+                        blurFunction={(e) => checkError(e)}
+                      />
+                      <div>{usuarioError.ciudadError}</div>
+                    </Form.Group>
+                    <Form.Group>
+  <Form.Label>País:</Form.Label>
+  <InputText
+    className={"inputLogin"}
+    type={"text"}
+    name={"pais"}
+    maxLength={70}
+    placeholder={usuarios.pais}
+    changeFunction={(e) => inputHandler(e)}
+    blurFunction={(e) => checkError(e)}
+  />
+  <div>{usuarioError.paisError}</div>
+</Form.Group>
+<Form.Group>
+  <Form.Label>Géneros preferidos:</Form.Label>
+  <InputText
+    className={"inputLogin"}
+    type={"enum"}
+    name={"generos_preferidos"}
+    maxLength={70}
+    placeholder={usuarios.generos_preferidos}
+    changeFunction={(e) => inputHandler(e)}
+    blurFunction={(e) => checkError(e)}
+  />
+  <div>{usuarioError.generos_preferidosError}</div>
+</Form.Group>
+<Form.Group>
+  <Form.Label>Biografía:</Form.Label>
+  <InputText
+    className={"inputLogin"}
+    type={"text"}
+    name={"biografia"}
+    maxLength={70}
+    placeholder={usuarios.biografia}
+    changeFunction={(e) => inputHandler(e)}
+    blurFunction={(e) => checkError(e)}
+  />
+  <div>{usuarioError.biografiaError}</div>
+</Form.Group>
+<br />
+<div className="buttonUpdate">
+  <Button
+    className=""
+    variant="primary"
+    onClick={() => updateUser()}
+  >
+    Actualizar Usuario
+  </Button>
+</div>
+</Form>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      )}
+    </div>
+  </>
+);
+        }

@@ -46,7 +46,7 @@ export const Productos = () => {
             console.log(producto, "hola soy libro");
             return (
               <Col onClick={() => selected(producto)} key={productos.id}>
-                <BookCard productos={producto} />
+                <BookCard className='productos' productos={producto} />
             
               </Col>
             );
