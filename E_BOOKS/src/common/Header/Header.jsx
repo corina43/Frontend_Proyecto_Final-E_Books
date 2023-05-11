@@ -82,7 +82,7 @@ import Nav from "react-bootstrap/Nav";
                   <NavDropdown title="Admin" id="basic-nav-dropdown">
                     <NavDropdown.Item as={Link} to="/usuarios/todos">
                     Todos los usuarios </NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/usuarios/delete">
+                    <NavDropdown.Item as={Link} to="/usuarios/delete/${id}">
                     Borrar Usuarios </NavDropdown.Item>
                       <NavDropdown.Item as={Link} to="/usuarios/prestamos">
                       Todos los Prestamos</NavDropdown.Item>

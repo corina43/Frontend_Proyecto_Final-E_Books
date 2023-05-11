@@ -1,50 +1,96 @@
+import React, { useState } from "react";
+import { Button, Card, Form, Modal } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { userData } from "../User/userSlice";
+import { detailData } from "../Detail/detailSlice";
+import { EliminarUsuario } from "../../services/apiCalls";
 
-import React, { useState } from 'react';
-import { useJwt } from "react-jwt";
-import { adminData} from '../../containers/Admin/AdminSlice';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import './AdminDelete.css';
-
-const DeleteUser = () => {
+export const DeleteUsuarios = () => {
+  // REDUX USER DATA && USER DETAILS
+  const ReduxCredentials = useSelector(userData);
+  const userDetails = useSelector(detailData);
+  const [welcome, setWelcome] = useState("");
   const navigate = useNavigate();
-  const token = localStorage.getItem("jwt");
+  let params = userDetails.choosenObject.id;
 
-  let { decodedToken } = useJwt(token);
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  // DELETE USER CONST AND REDIRECT TO GetAllUsers.jsx
+  const handleDelete = async (userId) => {
+    setIsLoading(true);
+    setError('');
 
-  const deleteUser = () => {
-    const root = "http://localhost:3009"
-     axios
-      .patch('${root}/usuarios/delete', { data: { email } })
-      .then(response => {
-        setMessage(response.data.message);
-      })
-      .catch(error => {
-        setMessage('Error al eliminar el usuario');
-      });
+    try {
+      // Realizar la solicitud DELETE al endpoint de eliminación de usuarios
+      await EliminarUsuario(userId, ReduxCredentials?.credentials?.token);
+
+      // Mostrar mensaje de éxito y redirigir a GetAllUsers.jsx
+      setWelcome(`Eliminado correctamente: ${userDetails.choosenObject.email}`);
+      setTimeout(() => {
+        navigate("/usuarios/todos/");
+      }, 1500);
+    } catch (error) {
+      // Capturar y mostrar cualquier error
+      console.log(error);
+      setWelcome(`No se puede eliminar un usuario administrador`);
+      setTimeout(() => {
+        setWelcome("");
+        navigate("/usuarios/todos");
+      }, 1500);
+    }
   };
 
+  const [showModal, setShowModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [userId, setUserId] = useState('');
 
-    return (
-      <div className="container">
-        <h1>Eliminar Usuario</h1>
-        <div className="form-group">
-          <label>Email:</label>
-          <input
-            type="email"
-            className="form-control"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <button className="btn btn-danger" onClick={deleteUser}>
-          Eliminar Usuario
-        </button>
-        {message && <p>{message}</p>}
+  const handleChange = (e) => {
+    setUserId(e.target.value);
+  };
+
+  return (
+    <>
+      <div>
+        {welcome !== "" ? (
+          <div className="divHola">
+            <Card>
+              <Card.Header>{welcome}</Card.Header>
+            </Card>
+          </div>
+        ) : (
+          <div className="btnEliminar">
+            <div className="admin"><h4> ¿ Quieres eliminar un usuario ?</h4></div>
+            <Button variant="light" onClick={() => setShowModal(true)}>
+              Eliminar Usuario
+            </Button>
+          </div>
+        )}
       </div>
-    );
 
-    }
-export default DeleteUser;
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Eliminar Usuario</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form.Group>
+            <Form.Label>Ingrese el ID del usuario a eliminar:</Form.Label>
+            <Form.Control
+              type="text"
+              value={userId}
+              onChange={handleChange}
+            />
+          </Form.Group>
+        </Modal.Body>
+        <Modal.Footer>
+          {error && <div className="text-danger">{error}</div>}
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            Cancelar
+          </Button>
+          <Button variant="danger" onClick={() => handleDelete(userId)} disabled={isLoading}>
+            {isLoading ? 'Eliminando...' : 'Eliminar'}
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+};

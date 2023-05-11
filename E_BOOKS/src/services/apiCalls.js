@@ -85,6 +85,15 @@ export const getAll = async (token) => {
 
 };
 
+export const EliminarUsuario = async (id, token) => {
+  const config = {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  };
+  return await axios.delete(`${root}/usuarios/delete/${id}`, config);
+};
+
 export const getAllPrestamos = async (token) => {
   const config = {
     headers: {'Authorization': 'Bearer '+ token, }

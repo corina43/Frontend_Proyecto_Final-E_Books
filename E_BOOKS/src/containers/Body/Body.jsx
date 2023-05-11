@@ -14,7 +14,8 @@ import VistaProductos from '../VistaProductos/VistaProductos';
 import { Prestamos } from '../Prestamos/Prestamos';
 
 import CrearPrestamo from '../CreatePrestamo/CreatePrestamo';
-import DeleteUser from '../Admin/AdminDelete';
+import  { DeleteUsuarios } from '../Admin/AdminDelete';
+
 
 
 
@@ -32,7 +33,7 @@ export const Body =() =>{
   <Route path="/usuarios/perfil" element={<Usuarios />} />
   <Route path="/usuarios/todos" element={<Admin />} />
   <Route path="/usuarios/prestamos" element={<AdminPrestamos />} />
-  <Route path="/usuarios/delete" element={<DeleteUser />} />
+  <Route path="/usuarios/delete/${id}" element={<DeleteUsuarios />} />
   <Route path="/productos" element={<Productos />} />
   <Route path="/Vistaproductos" element={<VistaProductos />} />
   <Route path="/prestamos" element={<Prestamos />} /> 
