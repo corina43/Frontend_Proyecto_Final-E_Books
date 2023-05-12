@@ -28,7 +28,7 @@
     <li><a href="#Instalación local">Instalación local</a></li>
     <li><a href="#Cómo-se-ha-realizado-este-proyecto">¿Cómo se ha realizado este proyecto?</a></li>
     <li><a href="#Vista-Api">Vista Api</a></li>
-     <li><a href="#Funcionalidades-Api">Futuras funcionalidades </a></li>
+     <li><a href="#Bugs-conocidos">Bugs-conocidos</a></li>
     <li><a href="#Licencia">Licencia</a></li>
     <li><a href="#Webgrafia">Webgrafia</a></li>
     <li><a href="#Agradecimientos">Agradecimientos</a></li>
@@ -177,7 +177,7 @@ Datos de acceso como usuario:
  
  
  
-### PANTALLAS Y PÁGINAS DE LA APLICACIÓN
+### Pantallas y paginas de la aplicacion
 
 La aplicación permite la navegación entre las distintas pantallas que la componen. Está estructurada de la siguiente manera:
  
