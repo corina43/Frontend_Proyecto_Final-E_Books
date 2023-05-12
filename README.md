@@ -184,6 +184,8 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
  
 # Vista usuario no registrado
 
+!['imagen-db'](./E_BOOKS/src/assets/images/Screenshot_171.png)
+
 * Home
 
 
@@ -192,6 +194,8 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
 > * Register
 
 # Vista usuario registrado(se accede mediante login)
+
+!['imagen-db'](./E_BOOKS/src/assets/images/172.png)
 
    >* Logout
    >* Profile: permite ver la informacion de cada usuario 
