@@ -104,9 +104,6 @@ import Nav from "react-bootstrap/Nav";
                   </Nav.Link>
                 </>
               )}
-              {/* <Nav.Link as={Link} to="/about">
-                About us
-              </Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
