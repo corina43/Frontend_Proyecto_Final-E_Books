@@ -199,9 +199,12 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
    >* Profile: permite ver la informacion de cada usuario 
    >* Profile Update: permite actualizar la informacion
    >* miInformacion:
-
-        * Mis prestamos: prestamos de cada usuario
-        * Productos: visualizar todos los libros existentes en la base de datos mediante cards con la imagen,descripcion,autor,titulo...
+* Mis prestamos: prestamos de cada usuario
+* Productos: visualizar todos los libros existentes en la base de datos mediante cards con la imagen,descripcion,autor,titulo...
 
    >* Crear Prestamos: realizar prestamos sobre los productos existentes en la base de datos.
    >* Libros por titulo: busqueda por titulo de los libros existentes en la base de datos
+
+  ### Vista usuario admin
+
+ !['imagen-db'](./E_BOOKS/src/assets/Screenshot_186.png)  
