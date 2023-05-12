@@ -188,16 +188,16 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
 
 
  > La vista "Home" es la página principal de la aplicación. Proporciona una funcionalidad de búsqueda de libros utilizando la API de Google Books,los usuarios pueden ingresar el nombre de un libro que deseen buscar. Al presionar la tecla "Enter", se realiza una solicitud a la API de Google Books para buscar libros que coincidan con el término de búsqueda ingresado.Los resultados de la búsqueda se muestran en forma de tarjetas de libros. Cada tarjeta contiene información relevante sobre el libro, como el título, autor, descripción y una imagen de portada
-> Login
-> Register
+> * Login
+> * Register
 
 # Vista usuario registrado(se accede mediante login)
 
-   > Logout
-   > Profile: permite ver la informacion de cada usuario 
-   > Profile Update: permite actualizar la informacion
-   > miInformacion:
+   >* Logout
+   >* Profile: permite ver la informacion de cada usuario 
+   >* Profile Update: permite actualizar la informacion
+   >* miInformacion:
         * Mis prestamos: prestamos de cada usuario
         * Productos: visualizar todos los libros existentes en la base de datos mediante cards con la imagen,descripcion,autor,titulo...
-   > Crear Prestamos: realizar prestamos sobre los productos existentes en la base de datos.
-   > Libros por titulo: busqueda por titulo de los libros existentes en la base de datos
+   >* Crear Prestamos: realizar prestamos sobre los productos existentes en la base de datos.
+   >* Libros por titulo: busqueda por titulo de los libros existentes en la base de datos
