@@ -177,19 +177,19 @@ Datos de acceso como usuario:
  
  
  
-# PANTALLAS Y PÁGINAS DE LA APLICACIÓN
+* PANTALLAS Y PÁGINAS DE LA APLICACIÓN
 
 La aplicación permite la navegación entre las distintas pantallas que la componen. Está estructurada de la siguiente manera:
  
  
-** Vista usuario no registrado
+* Vista usuario no registrado
 
 -->Home
-* La vista "Home" es la página principal de la aplicación. Proporciona una funcionalidad de búsqueda de libros utilizando la API de Google Books,los usuarios pueden ingresar el nombre de un libro que deseen buscar. Al presionar la tecla "Enter", se realiza una solicitud a la API de Google Books para buscar libros que coincidan con el término de búsqueda ingresado.Los resultados de la búsqueda se muestran en forma de tarjetas de libros. Cada tarjeta contiene información relevante sobre el libro, como el título, autor, descripción y una imagen de portada
-  * Login
-  * Register
+La vista "Home" es la página principal de la aplicación. Proporciona una funcionalidad de búsqueda de libros utilizando la API de Google Books,los usuarios pueden ingresar el nombre de un libro que deseen buscar. Al presionar la tecla "Enter", se realiza una solicitud a la API de Google Books para buscar libros que coincidan con el término de búsqueda ingresado.Los resultados de la búsqueda se muestran en forma de tarjetas de libros. Cada tarjeta contiene información relevante sobre el libro, como el título, autor, descripción y una imagen de portada
+* Login
+* Register
 
-** Vista usuario registrado(se accede mediante login)
+* Vista usuario registrado(se accede mediante login)
 
    * Logout
    * Profile: permite ver la informacion de cada usuario 
