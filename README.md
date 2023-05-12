@@ -27,8 +27,8 @@
     <li><a href="#Tecnologías">Tecnologías</a></li>
     <li><a href="#Instalación local">Instalación local</a></li>
     <li><a href="#Cómo-se-ha-realizado-este-proyecto">¿Cómo se ha realizado este proyecto?</a></li>
-    <li><a href="#Bugs-conocidos">Bugs conocidos</a></li>
-    <li><a href="#Futuras-funcionalidades">Futuras funcionalidades </a></li>
+    <li><a href="#Vista-Api">Vista Api</a></li>
+     <li><a href="#Funcionalidades-Api">Futuras funcionalidades </a></li>
     <li><a href="#Licencia">Licencia</a></li>
     <li><a href="#Webgrafia">Webgrafia</a></li>
     <li><a href="#Agradecimientos">Agradecimientos</a></li>
@@ -173,3 +173,17 @@ Datos de acceso como usuario:
 !['imagen-db'](./E_BOOKS/src/assets/images/ezgif-1-7997bb18cb.gif)
 
 ---
+### FRONTEND
+ 
+ 
+ 
+### PANTALLAS Y PÁGINAS DE LA APLICACIÓN
+
+La aplicación permite la navegación entre las distintas pantallas que la componen. Está estructurada de la siguiente manera:
+ 
+ 
+   ** Vista usuario no registrado
+**-->Home
+* La vista "Home" es la página principal de la aplicación. Proporciona una funcionalidad de búsqueda de libros utilizando la API de Google Books,los usuarios pueden ingresar el nombre de un libro que deseen buscar. Al presionar la tecla "Enter", se realiza una solicitud a la API de Google Books para buscar libros que coincidan con el término de búsqueda ingresado.Los resultados de la búsqueda se muestran en forma de tarjetas de libros. Cada tarjeta contiene información relevante sobre el libro, como el título, autor, descripción y una imagen de portada
+* Login
+* Register
