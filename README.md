@@ -198,9 +198,9 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
    >* Logout: cerrar session
    >* Profile: permite ver la informacion de cada usuario 
    >* Profile Update: permite actualizar la informacion
-   >* miInformacion:
-* Mis prestamos: prestamos de cada usuario
-* Productos: visualizar todos los libros existentes en la base de datos mediante cards con la imagen,descripcion,autor,titulo...
+   >* ### miInformacion:
+  * Mis prestamos: prestamos de cada usuario
+  * Productos: visualizar todos los libros existentes en la base de datos mediante cards con la imagen,descripcion,autor,titulo...
 
    >* Crear Prestamos: realizar prestamos sobre los productos existentes en la base de datos.
    >* Libros por titulo: busqueda por titulo de los libros existentes en la base de datos
@@ -208,3 +208,62 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
   ### Vista usuario admin
 
  !['imagen-db'](./E_BOOKS/src/assets/Screenshot_186.png)  
+
+   >* Logout: cerrar session
+   >* Profile: permite ver la informacion de cada usuario 
+   >* Profile Update: permite actualizar la informacion
+   >* ### Admin
+   * Todos los usuarios: muestra la informacion de todos los usuarios
+   * Borrar usuarios: permite borrar un usuario mediante la introduccion del id de usuario
+   * Todos los prestamos: muestra la informacion de todos los prestamos
+   * Productos: muestra todos los libros existentes en la base de datos mediante cards con la imagen,descripcion,autor,titulo...
+   >* Libros por titulo: busqueda por titulo de los libros existentes en la base de datos
+
+   ## Bugs conocidos
+
+
+⬜ Desajustes en el register se crea el usuario en la base de datos,pero no se encripta el password y por lo consequiente no se hace.
+
+⬜ No aparece el nombre del usuario logeado en el NavBar,aparece el email.
+
+⬜ Problemas al actualizar el perfil.  
+
+⬜ Borrar usuarios no se realiza adecuadamente. 
+
+⬜ No todas las vistas son responsive.
+
+## Webgrafia:
+
+
+To achieve the goal we have collected information from:
+  [React documentation](https://www.reactjs.com/)
+
+  [React-bootstrap GeeksHubs](https://react-bootstrap.github.io/)
+
+
+## Agradecimientos:
+
+Agradezco a todos mis compañeros y especialmente a:
+
+  **Dani** 
+
+<a href="https://www.github.com/datata" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=green" target="_blank"></a> 
+
+  **Jose**
+
+<a href="https://github.com/JoseMarin" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a> 
+
+  **Mara**
+
+<a href="https://www.github.com/MaraScampini" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=green" target="_blank"></a> 
+
+  **Alvaro**
+
+<a href="https://www.github.com/Alvaro" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=green" target="_blank"></a>
+
+
+## Contacto
+
+<a href = "mailto:micorreoelectronico@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+<a href="https://www.linkedin.com/in/linkedinUser/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+</p>
