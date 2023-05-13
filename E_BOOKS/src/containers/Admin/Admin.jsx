@@ -52,7 +52,7 @@ console.log(usuarios, "sou users")
           {usuarios.map((persona) => {
             return (
               <Col key={persona.id}>
-                <Card className="card my-3">
+                <Card className="usuarios my-3">
            <ListGroup variant="flush"> 
             <ListGroup.Item>
               <span className="text1">Nombre:</span>

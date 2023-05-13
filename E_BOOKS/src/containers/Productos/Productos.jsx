@@ -40,12 +40,12 @@ export const Productos = () => {
 
   return (
     <>
-      <Container fluid>
+      <Container fluid >
         <Row>
           {productos.map((producto) => {
             console.log(producto, "hola soy libro");
             return (
-              <Col onClick={() => selected(producto)} key={productos.id}>
+              <Col className="libro"  onClick={() => selected(producto)} key={productos.id}>
                 <BookCard className='productos' productos={producto} />
             
               </Col>

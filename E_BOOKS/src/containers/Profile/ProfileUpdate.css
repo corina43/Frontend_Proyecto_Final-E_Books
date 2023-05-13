@@ -1,3 +1,7 @@
+div{
+    justify-content: center;
+    align-items: center;
+}
 .updateProfile {
     margin-top: 20px;
   }

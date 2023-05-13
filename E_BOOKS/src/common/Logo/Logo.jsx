@@ -14,7 +14,7 @@ export const Logo = () => {
     <>
       <div className="logo">
         <header>
-          <div className="container">
+          <div className="containerlogo">
             <div className="row">
               <div className="LogoImg col-md-4 col-lg-4 col-xl-5 col-xxl-6 col-sm-11">
                 <a href="/">

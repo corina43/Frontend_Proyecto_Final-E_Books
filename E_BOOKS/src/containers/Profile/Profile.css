@@ -2,6 +2,32 @@
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    /* background: #ccc; */
+}
+
+/* /* .profile {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 2px #ccc;
+    padding: 20px;
+} */
+
+/* .text1 {
+    font-weight: bold;
+}
+
+.text2 {
+    margin-left: 10px;
+}*/
+ .ListGroup.Item {
+    display: flex;
+    align-items: center;
+    background: #ccc;
+  }  
+
+  .divCartas {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 .card {

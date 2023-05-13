@@ -79,7 +79,7 @@ const selected = (prestamo) => {
 //             <ListGroup.Item>
 //               <div className="text1">ID pRODUCTO:</div>
 //               <div className="text2"> {prestamo.id_producto}</div>
-//             </ListGroup.Item>
+//             </Group.Item>
           
 //             <ListGroup.Item>
 //               <div className="text1"> Fecha inicio: </div>

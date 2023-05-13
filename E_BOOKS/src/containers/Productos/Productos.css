@@ -2,12 +2,32 @@
     background-color: #14bad0;
     min-height: 90vh;
   }
- .productos{
+  .container fluid {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+  }
+.libro.col{
+  display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+ /* .productos{
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  margin: 1em;
+  align-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 
   max-width: 20rem;
 
@@ -19,4 +39,4 @@
 
   transition: 0.15s linear;
   
- } 
+ }  */

@@ -80,13 +80,25 @@
       width: 39px;
       height: 39px;
     }
-    /* .titleNavBar {
-      color: #19407b;
-      font-size: 1.2rem;
-      font-weight: bold;
-    } */
+   
     .logo h2 {
       font-weight: 300px;
     }
   }
-  
+  @media screen and (max-width: 360px) {
+    .navbarstyle {
+    font-size: 12px;
+    }
+    
+    .navbar-brand {
+    font-size: 16px;
+    }
+    
+    .navbar-nav .nav-link {
+    font-size: 14px;
+    }
+    
+    .dropdown-menu {
+    font-size: 14px;
+    }
+    }

@@ -74,7 +74,7 @@ const VistaProductos = () => {
         />
         <button className='btnProductos' type="submit">Buscar</button>
       </form>
-      <div className="book-card-container">
+      <div className="book-card-container ">
         {productos.map((producto) => (
           <CardImg variant="top" src={producto.poster_path}
           style={{ width: "18rem" }}

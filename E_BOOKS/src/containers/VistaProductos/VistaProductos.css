@@ -1,95 +1,4 @@
-/* Estilo principal */
-/* .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .formProductos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .inputProductos[type="text"] {
-    width: 300px;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .btnProductos[type="submit"] {
-    background-color: #dc3545;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-left: 8px;
-  }
-  
-  .btnProductos[type="submit"]:hover {
-    background-color: #c82333;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  li {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
- 
- 
-  .book-card-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-    justify-content: center;
-  }
-  
-  .book-card-container .card {
-    width: 18rem;
-   
-  }
-  
-  .book-card-container .card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-  }
-  
-  .book-card-container .card-body {
-    padding: 10px;
-  }
-  
-  .book-card-container .card-body ul {
-    list-style: none;
-    padding: 0;
-   
-  }
-  
-  .book-card-container .card-body ul li {
-    margin-bottom: 10px;
-  }
-  
-  .textColor {
-    font-weight: bold;
-    color: #0b0b0b;
-  }
-    */
+
     .container {
       max-width: 800px;
       margin: 0 auto;
@@ -148,10 +57,13 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       grid-gap: 20px;
       justify-content: center;
+      justify-items: center;
+      align-items: center;
     }
     
     .book-card-container .card {
       width: 100%;
+      justify-content: center;
     }
     
     .book-card-container .card img {
