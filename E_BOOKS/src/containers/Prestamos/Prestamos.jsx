@@ -48,7 +48,7 @@ export const Prestamos = (id_usuario) => {
 <Container fluid className='miPrest'>
 <Row>
   {prestamos.map((prestamo) => (
-    <Col className='miPrestamo' key={prestamo.id} md={4} sm={6} xs={12}>
+    <Col className='miPrestamo' key={prestamo.id} >
       <Card className="tarjeta">
         <Card.Img className="tarjeta-img-top" src={prestamo.Producto.poster_path} alt={prestamo.Producto.titulo} />
         <Card.Body className="tarjeta-body">

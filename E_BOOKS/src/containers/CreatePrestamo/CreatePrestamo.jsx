@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-// import { createPrestamo } from "../../actions/prestamoActions";
 import { CreatePrestamo } from "../../services/apiCalls"; 
 import { Form, Button, Card, Row, Col, FormGroup } from "react-bootstrap";
 import { userData } from "../User/userSlice";
@@ -29,7 +28,7 @@ export const newPrestamo = () => {
 
 
 const [backendMessage, setBackendMessage] = useState("");
-
+const [successMessage, setSuccessMessage] = useState("");
 
 const inputHandler = (e) => {
   setNewPrestamo((prevState) => ({
@@ -37,16 +36,16 @@ const inputHandler = (e) => {
     [e.target.name]: e.target.value,
   }));
 };
-// console.log(newPrestamo,'helllllllllllo')
+
 const checkError = (e) => { };
-const [successMessage, setSuccessMessage] = useState("");
+
 
 const createNewPrestamo = () => {
   CreatePrestamo(NewPrestamo, ReduxCredentials?.credentials?.token)
     .then((resultado) => {
-        setNewPrestamo(backendCall.data);
-        setSuccessMessage("¡Cita creada con éxito!");
-    //   setWelcome(`Correctly registered ${Prestamo.name}`);
+        // setNewPrestamo(backendCall.data);
+        setSuccessMessage("¡Cita creada con éxito!${Prestamo.producto.titulo}");
+    //  setWelcome(`Correctly registered ${Prestamo.producto.titulo}`);
       setTimeout(() => {
         navigate("/prestamos/misprestamos");
       }, 2500);
@@ -65,38 +64,6 @@ return (
         <Row >
           <Col>
             <Form className="FormNewPrestamo">
-              <Form.Group>
-                <Form.Label>Prestamo id:</Form.Label>
-                <InputText
-                  className="inputBasicDesign"
-                      
-                  
-                  type={"text"}
-                //   name={"id prestamo"}
-                  maxLength={50}
-                  placeholder={"Enter id prestamo"}
-                  required={true}
-                  changeFunction={(e) => inputHandler(e)}
-                  blurFunction={(e) => checkError(e)}
-                />
-              </Form.Group>
-            
-              <Form.Group>
-                <Form.Label>Id usuario:</Form.Label>
-                <InputText
-                  className= "inputBasicDesign"
-                      
-                
-                  type={"text"}
-                  name={"id_usuario"}
-                  maxLength={400}
-                  placeholder={"Enter your id"}
-                  required={true}
-                  changeFunction={(e) => inputHandler(e)}
-                  blurFunction={(e) => checkError(e)}
-                />
-              </Form.Group>
-             
               <Form.Group>
                 <Form.Label>Id producto:</Form.Label>
                 <InputText
@@ -179,7 +146,7 @@ return (
                   New prestamo
                 </Button></div>
                 <Col xs={3}></Col>
-                            {successMessage && <p>{successMessage}</p>}
+                            {successMessage && <p className="successMessage">{successMessage}</p>}
             </Form>
           </Col>
         </Row>
