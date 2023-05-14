@@ -45,32 +45,28 @@ export const Prestamos = (id_usuario) => {
 
   return (
 
-    <>
-   
-    {prestamos.map((prestamo) => (
-    // <Card className='tarjeta'>
-  <div className="tarjeta" key={prestamo.id}>
-    <img className="tarjeta-img-top" src={prestamo.Producto.poster_path} alt={prestamo.Producto.titulo} />
-    <div className="tarjeta-body">
-      
-      <h5 className="tarjeta-header">{prestamo.Producto.titulo}</h5>
-      <span className="textColor">Fecha inicio - fin: </span>
-      <p className="card-text">{prestamo.fecha_inicio} - {prestamo.fecha_fin}</p>
-      
-      <span className="textColor">Comentario: </span>
-      <p className="card-text">{prestamo.comentario_producto}</p>
-    </div>
-    <div className="tarjeta-footer">
-      <FontAwesomeIcon icon={faStar} />
-      <p className="card-text">{prestamo.puntuacion}</p>
-      
-    </div>
-   
-  </div>
-  // </Card>
-))}
-
-  </>
+<Container fluid className='miPrest'>
+<Row>
+  {prestamos.map((prestamo) => (
+    <Col className='miPrestamo' key={prestamo.id} md={4} sm={6} xs={12}>
+      <Card className="tarjeta">
+        <Card.Img className="tarjeta-img-top" src={prestamo.Producto.poster_path} alt={prestamo.Producto.titulo} />
+        <Card.Body className="tarjeta-body">
+          <Card.Title className="tarjeta-header">{prestamo.Producto.titulo}</Card.Title>
+          <span className="textColor">Fecha inicio - fin: </span>
+          <Card.Text>{prestamo.fecha_inicio} - {prestamo.fecha_fin}</Card.Text>
+          <span className="textColor">Comentario: </span>
+          <Card.Text>{prestamo.comentario_producto}</Card.Text>
+        </Card.Body>
+        <Card.Footer className="tarjeta-footer">
+          <FontAwesomeIcon icon={faStar} />
+          <Card.Text>{prestamo.puntuacion}</Card.Text>
+        </Card.Footer>
+      </Card>
+    </Col>
+  ))}
+</Row>
+</Container>
 );
 };
 
