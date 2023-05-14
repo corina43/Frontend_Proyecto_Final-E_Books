@@ -6,7 +6,7 @@ import { userData } from '../User/userSlice';
 import { adminData } from '../../containers/Admin/AdminSlice';
 import { verUsuarios } from '../../services/apiCalls';
 import './Admin.css'
-import { Col, ListGroup } from 'react-bootstrap';
+import { Col, Container, ListGroup } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import { addChoosen } from '../Detail/detailSlice';
 import Row from 'react-bootstrap/Row';
@@ -44,7 +44,6 @@ export const Admin = () => {
 console.log(usuarios, "sou users")
     return (
         
-
 <div className="usersDesign">
   <h3>Usuarios existentes:</h3>
      {usuarios.length > 0 ? (
@@ -52,8 +51,8 @@ console.log(usuarios, "sou users")
           {usuarios.map((persona) => {
             return (
               <Col key={persona.id}>
-                <Card className="usuarios my-3">
-           <ListGroup variant="flush"> 
+                <Card className="card my-3">
+           <ListGroup variant="flush" className='lista'> 
             <ListGroup.Item>
               <span className="text1">Nombre:</span>
               <span className="text2"> {persona.nombre}</span>

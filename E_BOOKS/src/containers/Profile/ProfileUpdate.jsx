@@ -7,7 +7,7 @@ import { verUsuariosPerfil, editarPerfil } from "../../services/apiCalls";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { InputText } from "../../common/InputText/InputText";
 import './ProfileUpdate.css'
-export const EditarPerfil = ({ onEditarPerfil }) => {
+export const EditarPerfil = ({ }) => {
   const ReduxCredentials = useSelector(userData);
   const navigate = useNavigate();
 
@@ -92,10 +92,12 @@ export const EditarPerfil = ({ onEditarPerfil }) => {
   };
 
   useEffect(() => {
-    if (Object.keys(usuarios).length === 0) {
+  
+    if (usuario.nombre === ""){
       verUsuariosPerfil(ReduxCredentials?.credentials?.token)
         .then((result) => {
-          setUsuarios(result.data);
+          setUsuario(result.data);
+          console.log(result.data,'holaaaaaaaaaaaaaaaaa')
           setUsuario({
             nombre: result.data.nombre,
             apellido: result.data.apellido,
@@ -112,21 +114,23 @@ export const EditarPerfil = ({ onEditarPerfil }) => {
     }
   }, [usuarios, ReduxCredentials]);
 
+
   const updateUser = () => {
     try {
       editarPerfil(usuario, ReduxCredentials?.credentials?.token);
       setWelcome("Perfil actualizado correctamente");
       setTimeout(() => {
-        onEditarPerfil();
+        editarPerfil();
       }, 1500);
     } catch (error) {
       setWelcome("Error al actualizar el perfil");
       setTimeout(() => {
-        onEditarPerfil();
+        editarPerfil();
       }, 1500);
     }
   };
   
+ 
   return (
     <>
       <div>
@@ -220,9 +224,9 @@ export const EditarPerfil = ({ onEditarPerfil }) => {
                       <div>{usuarioError.ciudadError}</div>
                     </Form.Group>
                     <Form.Group>
-  <Form.Label>País:</Form.Label>
-  <InputText
-    className={"inputLogin"}
+                   <Form.Label>País:</Form.Label>
+                    <InputText
+                      className={"inputLogin"}
     type={"text"}
     name={"pais"}
     maxLength={70}

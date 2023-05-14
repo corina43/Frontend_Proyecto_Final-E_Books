@@ -6,6 +6,7 @@ import { userData } from "../../containers/User/userSlice";
 import { Col, Container, Row } from "react-bootstrap";
 import BookCard from "../../common/BookCard/BookCard";
 import { addChoosen } from "../../containers/Detail/detailSlice";
+import './Productos.css'
 
 export const Productos = () => {
 

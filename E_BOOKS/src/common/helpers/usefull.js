@@ -55,12 +55,7 @@ export const validate = (name, data, required) => {
     case "generos_preferidos":
     // BIOGRAFÍA
     case "biografia":
-      // if (data === "" && required === true) {
-      //   return { message: "", validated: true };
-      // } else if (!/[a-zA-Z]/.test(data)) {
-      //   return { message: "Solo se permiten caracteres latinos", validated: false };
-      // }
-      // return { message: "", validated: true };
+      
       if (data === "" && required === true) {
         return { message: "Por favor, complete el campo", validated: false };
       } else if (!/[a-zA-Z]/.test(data)) {
@@ -69,7 +64,7 @@ export const validate = (name, data, required) => {
       return { message: "", validated: true };
 
     default:
-      console.log("Error no reconocido");
+      console.log("Error no reconocido",error);
   }
 };
 

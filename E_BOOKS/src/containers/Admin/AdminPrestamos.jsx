@@ -5,7 +5,7 @@ import { useDispatch ,useSelector } from 'react-redux';
 import { userData } from '../User/userSlice';
 import { adminData } from '../../containers/Admin/AdminSlice';
 import { getAllPrestamos } from '../../services/apiCalls';
-import './Admin.css'
+import './AdminPrestamos.css'
 import { Col, Container, ListGroup } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import PrestamosCard from '../../common/PrestamosCard/PrestamosCard'
@@ -50,12 +50,12 @@ const selected = (prestamo) => {
 
     return (
       <>
-      <Container fluid>
+      <Container fluid className='adminPrestamos'>
       <Row>
         {prestamos.map((prestamo) => {
           console.log(prestamo, "hola soy libro");
           return (
-            <Col onClick={() => selected(prestamo)} key={prestamos.id}>
+            <Col className='prestamito' onClick={() => selected(prestamo)} key={prestamos.id}>
               <PrestamosCard prestamos={prestamo} />
           
             </Col>

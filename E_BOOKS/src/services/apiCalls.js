@@ -53,13 +53,13 @@ export const createUserProfile = async (body) => {
   // console.log(res)
 };
 
-export const editarPerfil = async (body, token) => {
-  let config = {
+export const editarPerfil = async (body,token) => {
+   let config = {
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: 'Bearer '+ token,
     },
-  };
-  return await axios.put(`${root}/usuarios/perfil`, body, config);
+   };
+  return await axios.put(`${root}/usuarios/perfil`, body,config);
 };
 
 export const verUsuarios = async (token) => {

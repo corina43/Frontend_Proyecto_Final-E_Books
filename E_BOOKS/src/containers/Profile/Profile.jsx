@@ -58,7 +58,7 @@ export const Usuarios = () => {
 
 <div className="divCartas">
         <Card  style={{ width: "20rem" }}>
-          <ListGroup variant="flush">
+          <ListGroup variant="flush" className="profile">
             <ListGroup.Item>
               <span className="text1">Nombre:</span>
               <span className="text2"> {usuarios.nombre}</span>

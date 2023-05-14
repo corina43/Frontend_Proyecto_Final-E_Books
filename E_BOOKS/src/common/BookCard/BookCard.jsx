@@ -17,7 +17,7 @@ function BookCard({ productos }) {
 
 
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card style={{ width: "20rem"  }}>
       <Card.Img variant="top" src={productos.poster_path} />
       <Card.Body>
 

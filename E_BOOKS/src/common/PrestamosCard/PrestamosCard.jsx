@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
-
+import './PrestamosCard.css'
 
 function PrestamosCard({ prestamos }) {
   const [remove, setRemove] = useState(false);
@@ -17,13 +17,14 @@ function PrestamosCard({ prestamos }) {
 
 
   return (
-    <Card style={{ width: "18rem" }}>
-      {/* <Card.Img variant="top" src={prestamos.Productos.poster_path} /> */}
+    <Card className="prest" style={{ width: "20rem" }}>
+     
+     
       <Card.Body>
 
       
         <ul>
-         
+       
           <li>
             <span className="textColor">Id prestamo: </span>
             {prestamos.id}
