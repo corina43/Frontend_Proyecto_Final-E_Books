@@ -8,50 +8,7 @@
     margin-bottom: 10px;
     padding-left: 20px;
   } 
-  /* .miPrestamo-col{
-    width: 300px;
-    display: flex;
-    justify-content: space-between;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
-    margin-right: 10px;
-  
-  }
-  .tarjeta {
-    width: 300px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-  .tarjeta-body {
-    padding: 20px;
-    margin: 10px;
-    justify-content: space-around;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr auto;
-    grid-gap: 10px;
-  }
-  .text {
-    margin: -1.5em 0 0 1em;
-    font-size: 90%;
-    overflow: hidden;
-  } */ 
-  /* .miPrest {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    background: repeating-linear-gradient();
 
-  } */
   .miPrestamo {
     display: flex;
     justify-content: center;
@@ -86,19 +43,6 @@
   transition: 0.15s linear;
   }
   
-  /* .tarjeta-body {
-    padding: 20px;
-    margin: 10px;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
-  }
-   */
-  /* .text {
-    margin: -1.5em 0 0 1em;
-    font-size: 90%;
-    overflow: hidden;
-  } */
-  
+ 
 
 

@@ -43,9 +43,9 @@ const checkError = (e) => { };
 const createNewPrestamo = () => {
   CreatePrestamo(NewPrestamo, ReduxCredentials?.credentials?.token)
     .then((resultado) => {
-        // setNewPrestamo(backendCall.data);
-        setSuccessMessage("¡Cita creada con éxito!${Prestamo.producto.titulo}");
-    //  setWelcome(`Correctly registered ${Prestamo.producto.titulo}`);
+   
+        setSuccessMessage("¡Prestamo creado con éxito!$");
+   
       setTimeout(() => {
         navigate("/prestamos/misprestamos");
       }, 2500);
@@ -53,8 +53,6 @@ const createNewPrestamo = () => {
     .catch((error) => console.log(error));
 };
 
-console.log(NewPrestamo, "esto es credenciales");
-// console.log(valiCredenciales, "esto es Valicredenciales");
 
 return (
   <>

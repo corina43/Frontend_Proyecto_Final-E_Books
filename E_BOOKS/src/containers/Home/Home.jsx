@@ -10,7 +10,7 @@ export const Home = () => {
 
   const searchBook = (evt) => {
     if (evt.key === "Enter") {
-      console.log(evt.key,'ggggggggggggg')
+  
       axios.get(
           `https://www.googleapis.com/books/v1/volumes?q=${search}&key=AIzaSyC15ChLKEFQXxkXltYYU3jbGetZ6LmdUC0`
         )
@@ -24,7 +24,7 @@ export const Home = () => {
     <>
       <div className="headerA">
         <div className="row1">
-          <h1>A room without books is like<br /> a body without a soul.</h1>
+          <h1>A room without books<br /> is like a body without a soul.</h1>
         </div>
         <div className="row2">
           <h2>Encuentra tu libro</h2>
@@ -39,15 +39,15 @@ export const Home = () => {
               onKeyDown={searchBook}
              
             />
-            <button>
+            {/* <button>
               <i className="fas fa-search"></i>
-            </button>
+            </button> */}
           </div>
        
         </div>
       </div>
 
-      <div className="container">
+      <div className="containerHome">
         
         <LibrosCard book={bookData} />
       </div>
