@@ -173,6 +173,7 @@ Datos de acceso como usuario:
 !['imagen-db'](./E_BOOKS/src/assets/images/ezgif-1-7997bb18cb.gif)
 
 ---
+
 ### FRONTEND
  
  
@@ -228,9 +229,6 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
 
 ⬜ Problemas al actualizar el perfil.  
 
-⬜ Borrar usuarios no se realiza adecuadamente. 
-
-⬜ No todas las vistas son responsive.
 
 ## Webgrafia:
 
