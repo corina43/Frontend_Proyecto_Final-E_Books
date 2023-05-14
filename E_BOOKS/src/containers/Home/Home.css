@@ -191,13 +191,13 @@ html{
     text-align: justify;
     font-size: 13px;
 }
-/* 
+
    @media (max-width: 360px) {
     .header {
       height: auto;
       padding: 20px 10px;
     }
-    .headerA::before{
+    /* .headerA::before{
         content: "";
         position: absolute;
         top:0;
@@ -207,7 +207,7 @@ html{
         background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
         clip-path: circle(60% at left 300px);
         z-index: -1;
-    }
+    } */
     .row1 h1 {
       font-size: 24px;
       margin-left: 0;
@@ -242,13 +242,14 @@ html{
       height: 30px;
       font-size: 14px;
     }
-    /* .search button{
+}
+     .search button{
         outline: none;
         border: none;
         height: 35px;
         padding: 0 rem;
-    } */
-   /* .container {
+    } 
+   .container {
       width: 95%;
       margin-top: 15px;
       grid-gap: 10px;
@@ -287,9 +288,9 @@ html{
     .overlay-inner .description {
       font-size: 12px;
     }
-  */
-  @media (max-width: 360px) {
-    .headerA {
+ 
+  /* @media (max-width: 360px) {
+    .header {
       height: auto;
       padding: 20px 10px;
     }
@@ -369,4 +370,4 @@ html{
       font-size: 8px;
     }
   }
-   
+    */

@@ -44,7 +44,7 @@ const createNewPrestamo = () => {
   CreatePrestamo(NewPrestamo, ReduxCredentials?.credentials?.token)
     .then((resultado) => {
    
-        setSuccessMessage("¡Prestamo creado con éxito!$");
+        setSuccessMessage("¡Prestamo creado con éxito!");
    
       setTimeout(() => {
         navigate("/prestamos/misprestamos");
