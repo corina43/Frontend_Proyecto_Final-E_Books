@@ -230,9 +230,7 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
    ## Bugs conocidos
 
 
-⬜ Desajustes en el register se crea el usuario en la base de datos,pero no se encripta el password y por lo consequiente no se hace.
-
-⬜ No aparece el nombre del usuario logeado en el NavBar,aparece el email.
+⬜ No aparece el nombre del usuario logeado ,aparece el email.
 
 ⬜ Problemas al actualizar el perfil.  
 
