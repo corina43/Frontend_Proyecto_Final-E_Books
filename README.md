@@ -174,6 +174,13 @@ Datos de acceso como usuario:
 
 ---
 
+### Vista Api Mobile Nexus5
+---
+
+!['imagen-db'](./E_BOOKS/src/assets/ezgif-1-efdb660546.gif)
+
+---
+
 ### FRONTEND
  
  
