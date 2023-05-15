@@ -142,7 +142,7 @@ html{
 }
 .overlay-inner{
     background: white;
-    width: 700px;
+    width: 500px;
     height: 550px;
     padding: 1.5rem;
     position: relative;
@@ -169,11 +169,11 @@ html{
     width: 150px;
     height: 200px;
 }
-.overlay-inner .inner-box h3{
+.overlay-inner .inner-box h4{
     margin-top: 10px;
     color: green;
 }
-.overlay-inner .inner-box h4{
+.overlay-inner .inner-box h5{
     color: blue;
 }
 .overlay-inner .inner-box button{
@@ -197,17 +197,7 @@ html{
       height: auto;
       padding: 20px 10px;
     }
-    /* .headerA::before{
-        content: "";
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
-        clip-path: circle(60% at left 300px);
-        z-index: -1;
-    } */
+ 
     .row1 h1 {
       font-size: 24px;
       margin-left: 0;
@@ -260,8 +250,8 @@ html{
     }
   
     .overlay-inner {
-      width: 100%;
-      height: 100%;
+      width: 550px;
+      height: 600px;  
       padding: 10px;
       font-size: 14px;
     }
@@ -289,14 +279,14 @@ html{
       font-size: 12px;
     }
  
-  /* @media (max-width: 360px) {
+   @media (max-width: 360px) {
     .header {
       height: auto;
       padding: 20px 10px;
     }
   
     .row1 h1 {
-      font-size: 24px;
+      font-size: 22px;
       margin-left: 0;
     }
   
@@ -308,7 +298,7 @@ html{
     }
   
     .row2 h2 {
-      font-size: 24px;
+      font-size: 22px;
       margin-top: 15px;
       margin-bottom: 10px;
     }
@@ -341,14 +331,15 @@ html{
     }
   
     .overlay-inner {
-      width: 100%;
-      height: 100%;
+      width: 360px;
+      height: 600px;
       padding: 10px;
       font-size: 7px;
     }
   
     .overlay-inner .inner-box {
       flex-direction: column;
+      justify-content: center;
       align-items: center;
       margin-top: 15px;
     }
@@ -362,7 +353,7 @@ html{
   
     .overlay-inner .inner-box button {
       width: 80px;
-      font-size: 10px;
+      font-size: 8px;
       padding: 0.2rem 0.4rem;
     }
   
@@ -370,4 +361,4 @@ html{
       font-size: 8px;
     }
   }
-    */
+    

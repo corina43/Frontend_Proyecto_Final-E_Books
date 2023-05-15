@@ -39,9 +39,6 @@ export const Home = () => {
               onKeyDown={searchBook}
              
             />
-            {/* <button>
-              <i className="fas fa-search"></i>
-            </button> */}
           </div>
        
         </div>

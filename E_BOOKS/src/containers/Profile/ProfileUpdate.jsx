@@ -112,8 +112,8 @@ export const EditarPerfil = ({ }) => {
         })
         .catch((error) => console.log(error));
     }
-  }, [usuarios, ReduxCredentials]);
-
+  }, [usuario, ReduxCredentials?.credentials?.token]);
+console.log(usuario, ReduxCredentials?.credentials?.token,'joooooooooooder')
 
   const updateUser = () => {
     try {

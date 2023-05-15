@@ -32,7 +32,7 @@ export const LibrosCard = ({ book }) => {
               >
                 <img src={thumbnail} alt="" />
                 <div className="bottom">
-                  <h3 className="title">{item.volumeInfo.title}</h3>
+                  <h4 className="title">{item.volumeInfo.title}</h4>
                   <p className="amount">&#8377;{amount}</p>
                 </div>
               </div>

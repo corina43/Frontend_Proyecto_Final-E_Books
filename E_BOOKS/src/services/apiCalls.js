@@ -33,24 +33,9 @@ export const verUsuariosPerfil = async (token) => {
 
 export const createUserProfile = async (body) => {
 
-  // let _body={
-
-  //   nombre: body.nombre,
-  //   apellido: body.apellido,
-  //   email: body.email,
-  //   password: body.password,
-  //   fecha_nacimiento: body.fecha_nacimiento,
-  //   fecha_registro: body.fecha_registro,
-  //   ciudad: body.ciudad,
-  //   pais: body.pais,
-  //   generos_preferidos: body.generos_preferidos,
-  //   biografia: body.biografia,
-
-    
-  // }
-  // console.log(_body)
+ 
   return await axios.post(`${root}/auth/register`, body)
-  // console.log(res)
+
 };
 
 export const editarPerfil = async (body,token) => {
@@ -58,7 +43,9 @@ export const editarPerfil = async (body,token) => {
     headers: {
       Authorization: 'Bearer '+ token,
     },
+  
    };
+   console.log(token,'dime el token')
   return await axios.put(`${root}/usuarios/perfil`, body,config);
 };
 
@@ -68,6 +55,7 @@ export const verUsuarios = async (token) => {
     headers: {
       Authorization: `Bearer ${token}` 
     }
+   
 }
 
   return await axios.get(`${root}/usuarios/todos`, config);
