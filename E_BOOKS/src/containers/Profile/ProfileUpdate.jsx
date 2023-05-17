@@ -91,7 +91,12 @@ export const EditarPerfil = ({ }) => {
       [name + "Error"]: checked.message,
     }));
   };
-
+  const inputHandler = (e) => {
+    setUsuario((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
   useEffect(() => {
   
     if (usuario.nombre === ""){

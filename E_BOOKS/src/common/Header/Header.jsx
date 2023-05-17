@@ -95,8 +95,14 @@ import Nav from "react-bootstrap/Nav";
                   <Nav.Link as={Link} to="/Vistaproductos">
                      Libros por titulo
                   </Nav.Link>
+                  <Nav.Link as={Link} to="/prestamos/crearprestamos">
+                    Crear Prestamo
+                  </Nav.Link>
                   <Nav.Link as={Link} to="/productos/newproducto">
                      Crear Producto
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/productos/productos/${id}">
+                     Actualizar Producto
                   </Nav.Link>
                 </>
               ) : (
