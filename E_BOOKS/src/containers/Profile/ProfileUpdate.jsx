@@ -7,6 +7,7 @@ import { verUsuariosPerfil, editarPerfil } from "../../services/apiCalls";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { InputText } from "../../common/InputText/InputText";
 import './ProfileUpdate.css'
+
 export const EditarPerfil = ({ }) => {
   const ReduxCredentials = useSelector(userData);
   const navigate = useNavigate();
@@ -113,7 +114,7 @@ export const EditarPerfil = ({ }) => {
         .catch((error) => console.log(error));
     }
   }, [usuario, ReduxCredentials?.credentials?.token]);
-console.log(usuario, ReduxCredentials?.credentials?.token,'joooooooooooder')
+console.log(usuario, ReduxCredentials?.credentials?.token,'jooooooooooo')
 
   const updateUser = () => {
     try {
