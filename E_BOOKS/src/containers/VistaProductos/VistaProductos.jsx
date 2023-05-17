@@ -14,6 +14,7 @@ import './VistaProductos.css';
 const VistaProductos = () => {
   const root = "http://localhost:3009"
   const [productos, setProductos] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [search, setSearch] = useState('');
 
   const getAllProducts = async () => {
@@ -61,6 +62,14 @@ const VistaProductos = () => {
     console.log(prestamo,'tengo sueño')
    
   }
+  const openModal = (producto) => {
+    setSelectedProduct(producto);
+  };
+
+  const closeModal = () => {
+    setSelectedProduct(null);
+  };
+
   
   return (
     <div>
@@ -81,13 +90,34 @@ const VistaProductos = () => {
             key={producto.id}
             titulo={producto.titulo}
             autor={producto.autor}
+            descripcion={producto.descripcion}
+            categoria={producto.categoria}
+            onClick={() => openModal(producto)}
           />
         ))}
       </div>
+    
+     {/* Modal  */}
+      {selectedProduct && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={closeModal}>&times;</span>
+            <h2>{selectedProduct.titulo}</h2>
+            <p>Autor: {selectedProduct.autor}</p>
+            <p>Descripción: {selectedProduct.descripcion}</p>
+            <p>Categoría: {selectedProduct.categoria}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 
-export default VistaProductos;
+
+
+ export default VistaProductos;
+
+
+
 

@@ -9,10 +9,18 @@
 
 
   .info {
-    display: flex;
-    justify-content: center;
-    /* margin-top: 30px; */
-}
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ width: 100%;
+ max-width: 600px;
+ margin: 0 auto;
+ padding: 20px;
+     
+       
+      }
+
 .profile{
     background: #fff;
 }

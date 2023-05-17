@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import './CreateProducto.css'
+import { InputText } from "../../common/InputText/InputText";
 const CrearProductoForm = () => {
 
   const [producto, setProducto] = useState({
@@ -52,15 +53,15 @@ const CrearProductoForm = () => {
   };
 
   return (
-    <div>
+    <div className='containerProd'>
       <h2>Crear Producto</h2>
       {mensajeExito && <div className="alert alert-success">{mensajeExito}</div>}
       <form onSubmit={handleSubmit}>
-        <div className="mb-3">
+        <div className="prodtc">
           <label htmlFor="titulo" className="form-label">
             Título
           </label>
-          <input
+          <InputText
             type="text"
             className="form-control"
             id="titulo"
@@ -71,7 +72,7 @@ const CrearProductoForm = () => {
                <label htmlFor="autor" className="form-label">
             Autor
           </label>
-          <input
+          <InputText
             type="text"
             className="form-control"
             id="autor"
@@ -82,7 +83,7 @@ const CrearProductoForm = () => {
                <label htmlFor="descripcion" className="form-label">
             Descripcion
           </label>
-          <input
+          <InputText
             type="text"
             className="form-control"
             id="descripcion"
@@ -93,7 +94,7 @@ const CrearProductoForm = () => {
                <label htmlFor="fecha_publicacion" className="form-label">
             Fecha Publicacion
           </label>
-          <input
+          <InputText
             type="date"
             className="form-control"
             id="fecha_publicacion"
@@ -104,7 +105,7 @@ const CrearProductoForm = () => {
                <label htmlFor="tipo" className="form-label">
             Típo
           </label>
-          <input
+          <InputText
             type="text"
             className="form-control"
             id="tipo"
@@ -115,7 +116,7 @@ const CrearProductoForm = () => {
                <label htmlFor="categoria" className="form-label">
             Categoria
           </label>
-          <input
+          <InputText
             type="text"
             className="form-control"
             id="categoria"
@@ -126,7 +127,7 @@ const CrearProductoForm = () => {
                <label htmlFor="genero" className="form-label">
             Genero
           </label>
-          <input
+          <InputText
             type="text"
             className="form-control"
             id="genero"
@@ -138,7 +139,7 @@ const CrearProductoForm = () => {
           <label htmlFor="poster_path" className="form-label">
     Poster Path (Dirección de la imagen)
   </label>
-  <input
+  <InputText
     type="text"
     className="form-control"
     id="poster_path"
@@ -148,7 +149,7 @@ const CrearProductoForm = () => {
   />
         </div>
        
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn-primary ">
           Crear Producto
         </button>
       </form>

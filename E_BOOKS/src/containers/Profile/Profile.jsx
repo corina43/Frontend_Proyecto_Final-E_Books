@@ -57,7 +57,7 @@ export const Usuarios = () => {
     <>
 
 <div className="info">
-        <Card  style={{ width: "18rem" }}>
+        <Card  style={{ width: "35rem" }}>
           <ListGroup variant="flush" className="profile">
             <ListGroup.Item>
               <span className="text1">Nombre:</span>

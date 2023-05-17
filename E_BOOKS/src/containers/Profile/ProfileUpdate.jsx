@@ -143,7 +143,7 @@ console.log(usuario, ReduxCredentials?.credentials?.token,'jooooooooooo')
           </div>
         ) : (
           <div>
-            <Container>
+            <Container className="containerUpt">
               <Row className="updateProfile">
                 <Col>
                   <Form>

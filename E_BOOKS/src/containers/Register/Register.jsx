@@ -15,7 +15,7 @@ import "./Register.css";
 export const Register = () => {
 
     const navigate = useNavigate();
-    // 1 - Primero siempre se comprueba el valor de los hooks
+
     const [credenciales, setCredenciales] = useState({
         nombre: "",
         apellido: "",
@@ -30,7 +30,7 @@ export const Register = () => {
        
     });
   
-    //Este hook consistirá en el lugar de guardado de mensajes de error, a priori estarán en comillas vacías
+  
     const [credencialesError, setCredencialesError] = useState({
           nombreError: "",
           apellidoError: "",
@@ -68,7 +68,7 @@ export const Register = () => {
    // 3 - Ejecutamos los useEffect
   
    useEffect(() => {
-    //Este useEffect se va a ejecutar SIEMPRE que hayan cambios en el hook credenciales
+ 
      console.log("Credenciales ahora vale......", credenciales);
   
     console.log(credenciales);
@@ -112,14 +112,14 @@ export const Register = () => {
     
     errorFound = validation.message;
   
-    //PARTE QUE NO FUNCIONA//
+ 
   
      setCredencialesValido((prevState) => ({
        ...prevState,
        [e.target.name +'Valido']: validation.validated,
      }));
   
-    ///////////////////////////
+ 
   
     //Aqui seteamos el hook de los errores
   
@@ -141,7 +141,7 @@ export const Register = () => {
   // 2 - Se mira en la zona de renderizado...
   return (
 
-    <div className="container">
+    <div className="containerRegister">
     <Form className="register-form">
       <h2>Registro</h2>
       <FormGroup>
