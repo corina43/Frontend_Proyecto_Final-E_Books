@@ -112,3 +112,11 @@ export const CreatePrestamo = async (body, token) => {
    return await axios.post(`${root}/prestamos/crearprestamos`, body, config)
  };
  
+ export const updateProduct = async (id, body, token) => {
+  const config = {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  };
+  return await axios.put(`${root}/productos/productos/${id}`, body, config);
+};

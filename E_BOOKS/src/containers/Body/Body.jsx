@@ -17,7 +17,7 @@ import CrearPrestamo from '../CreatePrestamo/CreatePrestamo';
 import  { DeleteUsuarios } from '../Admin/AdminDelete';
 import { EditarPerfil } from '../Profile/ProfileUpdate';
 import CrearProductoForm from '../CreateProducto/CreateProducto';
-import EditarProducto from '../UpdateProductos/UpdateProductos';
+import { EditarProductos } from '../UpdateProductos/UpdateProductos';
 
 
 
@@ -38,7 +38,7 @@ export const Body =() =>{
   <Route path="/usuarios/prestamos" element={<AdminPrestamos />} />
   <Route path="/usuarios/delete/${id}" element={<DeleteUsuarios />} />
   <Route path="/productos" element={<Productos />} />
-  <Route path="/productos/productos/${id}" element={<EditarProducto />} />
+  <Route path="/productos/productos/${id}" element={<EditarProductos />} />
   <Route path="/productos/newproducto" element={<CrearProductoForm/>} />
   <Route path="/Vistaproductos" element={<VistaProductos />} />
   <Route path="/prestamos" element={<Prestamos />} /> 
