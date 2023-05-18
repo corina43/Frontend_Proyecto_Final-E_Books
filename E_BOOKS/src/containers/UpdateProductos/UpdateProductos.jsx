@@ -22,7 +22,7 @@ const EditarProducto = ({ id }) => {
  const updateProducto = async ({id}) => {
     try {
         const response = await axios.put(`${root}/productos/productos/${id}`)  
-    //   const response = await axios.get(`${root}/productos/${productId}`);
+   
       const producto = response.data;
 
       setTitulo(producto.titulo);

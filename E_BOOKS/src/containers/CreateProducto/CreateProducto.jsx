@@ -61,7 +61,7 @@ const CrearProductoForm = () => {
           <label htmlFor="titulo" className="form-label">
             Título
           </label>
-          <InputText
+          <input
             type="text"
             className="form-control"
             id="titulo"
@@ -72,7 +72,7 @@ const CrearProductoForm = () => {
                <label htmlFor="autor" className="form-label">
             Autor
           </label>
-          <InputText
+          <input
             type="text"
             className="form-control"
             id="autor"
@@ -83,7 +83,7 @@ const CrearProductoForm = () => {
                <label htmlFor="descripcion" className="form-label">
             Descripcion
           </label>
-          <InputText
+          <input
             type="text"
             className="form-control"
             id="descripcion"
@@ -94,18 +94,21 @@ const CrearProductoForm = () => {
                <label htmlFor="fecha_publicacion" className="form-label">
             Fecha Publicacion
           </label>
-          <InputText
-            type="date"
+          <input
+            type="Date"
             className="form-control"
             id="fecha_publicacion"
             name="fecha_publicacion"
             value={producto.fecha_publicacion}
             onChange={handleChange}
           />
+
+        
+          
                <label htmlFor="tipo" className="form-label">
             Típo
           </label>
-          <InputText
+          <input
             type="text"
             className="form-control"
             id="tipo"
@@ -116,7 +119,7 @@ const CrearProductoForm = () => {
                <label htmlFor="categoria" className="form-label">
             Categoria
           </label>
-          <InputText
+          <input
             type="text"
             className="form-control"
             id="categoria"
@@ -127,7 +130,7 @@ const CrearProductoForm = () => {
                <label htmlFor="genero" className="form-label">
             Genero
           </label>
-          <InputText
+          <input
             type="text"
             className="form-control"
             id="genero"
@@ -139,7 +142,7 @@ const CrearProductoForm = () => {
           <label htmlFor="poster_path" className="form-label">
     Poster Path (Dirección de la imagen)
   </label>
-  <InputText
+  <input
     type="text"
     className="form-control"
     id="poster_path"
