@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './UpdateProducto.css'
-
+import './UpdateProducto.css';
 
 const EditarProducto = ({ id }) => {
   const [titulo, setTitulo] = useState('');
@@ -14,15 +13,15 @@ const EditarProducto = ({ id }) => {
   const [poster_path, setPoster_Path] = useState('');
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
-  const root = "http://localhost:3009"
+  const root = "http://localhost:3009";
+
   useEffect(() => {
     updateProducto();
   }, []);
 
- const updateProducto = async ({id}) => {
+  const updateProducto = async () => {
     try {
-        const response = await axios.put(`${root}/productos/productos/${id}`)  
-   
+      const response = await axios.get(`${root}/productos/productos/${id}`);
       const producto = response.data;
 
       setTitulo(producto.titulo);
@@ -32,8 +31,7 @@ const EditarProducto = ({ id }) => {
       setTipo(producto.tipo);
       setCategoria(producto.categoria);
       setGenero(producto.genero);
-      setPoster_Path(producto.poster_path)
-     
+      setPoster_Path(producto.poster_path);
     } catch (error) {
       setError('Error al obtener los detalles del producto');
     }
@@ -42,17 +40,16 @@ const EditarProducto = ({ id }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try { 
-       const response = await axios.put(`${root}/productos/productos/${id}`, {
+    try {
+      const response = await axios.put(`${root}/productos/productos/${id}`, {
         titulo,
         autor,
         descripcion,
-        fecha_publicacion: Fecha_Publicacion,
+        fecha_publicacion,
         tipo,
         categoria,
         genero,
         poster_path,
-       
       });
 
       setSuccess(response.data.message);
@@ -67,7 +64,7 @@ const EditarProducto = ({ id }) => {
       {error && <div className="alert alert-danger">{error}</div>}
       {success && <div className="alert alert-success">{success}</div>}
       <form onSubmit={handleSubmit}>
-        
+
         <div className="mb-3">
           <label htmlFor="titulo" className="form-label">
             Título
@@ -80,6 +77,7 @@ const EditarProducto = ({ id }) => {
             onChange={(e) => setTitulo(e.target.value)}
           />
         </div>
+
         <div className="mb-3">
           <label htmlFor="autor" className="form-label">
             Autor
@@ -91,8 +89,10 @@ const EditarProducto = ({ id }) => {
             value={autor}
             onChange={(e) => setAutor(e.target.value)}
           />
-          
-        <label htmlFor="descripcion" className="form-label">
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="descripcion" className="form-label">
             Descripcion
           </label>
           <input
@@ -103,29 +103,40 @@ const EditarProducto = ({ id }) => {
             value={descripcion}
             onChange={(e) => setDescripcion(e.target.value)}
           />
-               <label htmlFor="fecha_publicacion" className="form-label">
-            Fecha Publicacion
-          </label>
-          <input
-            type="date"
-            className="form-control"
-            id="fecha_publicacion"
-            name="fecha_publicacion"
-            value={fecha_publicacion}
-            onChange={(e) => setFecha_Publicacion(e.target.value)}
-          />
-               <label htmlFor="tipo" className="form-label">
-            Típo
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="tipo"
-            name="tipo"
-            value={tipo}
-            onChange={(e) => setTipo(e.target.value)}
-          />
-               <label htmlFor="categoria" className="form-label">
+        </div>
+
+        <div className="mb-3">
+  <label htmlFor="fecha_publicacion" className="form-label">
+    Fecha Publicacion
+  </label>
+  <input
+    type="date"
+    className="form-control"
+    id="fecha_publicacion"
+    name="fecha_publicacion"
+    value={fecha_publicacion}
+    onChange={(e) => setFecha_Publicacion(e.target.value)}
+  />
+</div>
+
+<div className="mb-3">
+  <label htmlFor="tipo" className="form-label">
+    Tipo
+  </label>
+  <input
+    type="text"
+    className="form-control"
+    id="tipo"
+    name="tipo"
+    value={tipo}
+    onChange={(e) => setTipo(e.target.value)}
+  />
+</div>
+ 
+
+
+        <div className="mb-3">
+          <label htmlFor="categoria" className="form-label">
             Categoria
           </label>
           <input
@@ -136,7 +147,9 @@ const EditarProducto = ({ id }) => {
             value={categoria}
             onChange={(e) => setCategoria(e.target.value)}
           />
-               <label htmlFor="genero" className="form-label">
+        </div>
+        <div className="mb-3">
+          <label htmlFor="genero" className="form-label">
             Genero
           </label>
           <input
@@ -147,20 +160,20 @@ const EditarProducto = ({ id }) => {
             value={genero}
             onChange={(e) => setGenero(e.target.value)}
           />
-             
-          <label htmlFor="poster_path" className="form-label">
-    Poster Path (Dirección de la imagen)
-  </label>
-  <input
-    type="text"
-    className="form-control"
-    id="poster_path"
-    name="poster_path"
-    value={poster_path}
-    onChange={(e) => setPoster_Path(e.target.value)}
-  />
         </div>
-      
+        <div className="mb-3">
+          <label htmlFor="poster_path" className="form-label">
+            Poster Path (Dirección de la imagen)
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="poster_path"
+            name="poster_path"
+            value={poster_path}
+            onChange={(e) => setPoster_Path(e.target.value)}
+          />
+        </div>
         <button type="submit" className="btn btn-primary">
           Actualizar
         </button>
@@ -169,4 +182,4 @@ const EditarProducto = ({ id }) => {
   );
 };
 
- export default EditarProducto;
+export default EditarProducto;

@@ -31,16 +31,12 @@
   
   }
   
-  .titleNavBar {
-    color: #19407b;
-    font-size: 1.5rem;
-    font-weight: bold;
+
+ 
+  .NavBar {
+    display: flex;
+    justify-content: flex-start !important;
   }
-  
-  .navbar {
-    margin-left: auto;
-  }
-  
   .navbar-nav {
     display: flex;
     flex-direction: row;

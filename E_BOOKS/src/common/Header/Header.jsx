@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { userData, userout } from "../../containers/User/userSlice";
 import Nav from "react-bootstrap/Nav";
-
+import './Header.css'
 
 
  export function Header () {
