@@ -65,13 +65,11 @@ export const Register = () => {
     };
   
   
-   // 3 - Ejecutamos los useEffect
+ 
   
    useEffect(() => {
  
-     console.log("Credenciales ahora vale......", credenciales);
-  
-    console.log(credenciales);
+    
     for (let errorFound in credencialesError) {
    
       if (credencialesError[errorFound] !== "" ) {
@@ -132,7 +130,7 @@ export const Register = () => {
   const userRegister = () => {
     createUserProfile(credenciales)
     .then(() => {
-      console.log("todo correcto");
+     
        navigate('/login')
     })
     .catch((errorFound) => console.log(errorFound));

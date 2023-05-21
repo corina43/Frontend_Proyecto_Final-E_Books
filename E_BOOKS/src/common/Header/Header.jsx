@@ -45,26 +45,21 @@ import './Header.css'
                      Logout
                   </Nav.Link>
                   
-                  <Nav.Link as={Link} to="/usuarios/profile">
-                     Profile
-                  </Nav.Link>
-                  <NavDropdown title="Profile Update" id="basic-nav-dropdown">
+                  <NavDropdown title="Mi informacion" id="basic-nav-dropdown">
+            
+                   <NavDropdown.Item as={Link} to="/usuarios/profile">
+                      Profile</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="/usuarios/perfil">
-                      Profile Update</NavDropdown.Item>
+                      Profile Update
+                    </NavDropdown.Item>
                  </NavDropdown>
-                  <NavDropdown title="miInformacion" id="basic-nav-dropdown">
-                    <NavDropdown.Item as={Link} to="/prestamos">
-                      Mis Prestamos</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/productos">
-                       Productos</NavDropdown.Item>
-                  </NavDropdown>
-                  <Nav.Link as={Link} to="/prestamos/crearprestamos">
-                    Crear Prestamo
-                  </Nav.Link>
-                  
-              
-                  <Nav.Link as={Link} to="/Vistaproductos">
-                   Libros por titulo
+
+                 <Nav.Link as={Link} to="/prestamos">
+                      Mis Prestamos</Nav.Link>
+                    <Nav.Link as={Link} to="/productos/autor/${autor}">
+                     Libros por Autor</Nav.Link>
+                 <Nav.Link as={Link} to="/Vistaproductos">
+                   Crear prestamos
                   </Nav.Link>
                 </>
               ) : credencialesRedux?.credentials?.usuario?.id_rol === 1 ? (
@@ -72,7 +67,7 @@ import './Header.css'
                   <Nav.Link as={Link} to="/" onClick={() => logout()}>
                      Logout
                   </Nav.Link>
-                  <NavDropdown title="Profile" id="basic-nav-dropdown">
+                  <NavDropdown title="Mi informacion" id="basic-nav-dropdown">
                     <NavDropdown.Item as={Link} to="/usuarios/profile">
                       Profile</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="/usuarios/perfil">
@@ -88,16 +83,17 @@ import './Header.css'
                       Todos los Prestamos</NavDropdown.Item>
                       <NavDropdown.Item as={Link} to="/prestamos">
                       Prestamos</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/productos">
+                    <NavDropdown.Item as={Link} to="/productos/autor/${autor}">
                       Productos</NavDropdown.Item>
                       </NavDropdown>
-                   
-                  <Nav.Link as={Link} to="/Vistaproductos">
-                     Libros por titulo
+                      <Nav.Link as={Link} to="/prestamos">
+                      Mis Prestamos</Nav.Link>
+                    <Nav.Link as={Link} to="/productos/autor/${autor}">
+                     Libros por Autor</Nav.Link>
+                   <Nav.Link as={Link} to="/Vistaproductos">
+                   Crear prestamos
                   </Nav.Link>
-                  <Nav.Link as={Link} to="/prestamos/crearprestamos">
-                    Crear Prestamo
-                  </Nav.Link>
+                
                   <Nav.Link as={Link} to="/productos/newproducto">
                      Crear Producto
                   </Nav.Link>

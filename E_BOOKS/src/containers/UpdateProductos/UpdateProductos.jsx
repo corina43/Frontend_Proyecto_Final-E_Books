@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getAll, updateProduct } from "../../services/apiCalls"; // Importa la función de actualización del producto
+import { getAll, updateProduct } from "../../services/apiCalls"; 
 import { userData } from "../../containers/User/userSlice";
-import { Col, Container, Row, Button, Modal, Form } from "react-bootstrap";
+import { Col, Container, Row, Button, Modal, Form, CardImg } from "react-bootstrap";
 import BookCard from "../../common/BookCard/BookCard";
 import { addChoosen } from "../../containers/Detail/detailSlice";
 import "./UpdateProducto.css";
@@ -28,9 +28,9 @@ export const EditarProductos = () => {
     if (productos.length === 0) {
       getAll(ReduxCredentials?.credentials?.token)
         .then((result) => {
-          console.log("Resultado completo:", result.data);
+         
           setProductos(result.data);
-          console.log(result.data, "hiiiiiiiiiiiii");
+        
         })
         .catch((error) => console.log(error));
     }
@@ -56,7 +56,7 @@ export const EditarProductos = () => {
 
   const selected = (producto) => {
     dispatch(addChoosen({ choosenObject: producto }));
-    console.log(producto);
+  
     openModal(producto);
   };
 
@@ -84,6 +84,7 @@ export const EditarProductos = () => {
       );
 
       closeModal();
+    
     } catch (error) {
       console.log(error);
     }
@@ -92,17 +93,26 @@ export const EditarProductos = () => {
   return (
     <>
       <Container fluid>
+      <h1>Actualizar Productos</h1>
         <Row>
           {productos.map((producto) => {
-            console.log(producto, "hola soy libro");
+          
             return (
               <Col
                 className="libro"
                 onClick={() => selected(producto)}
                 key={productos.id}
               >
-                <BookCard className="productos" productos={producto}
-/>
+   <CardImg variant="top" src={producto.poster_path}
+            style={{ width: "18rem" }}
+            key={producto.id}
+            titulo={producto.titulo}
+            autor={producto.autor}
+            descripcion={producto.descripcion}
+            categoria={producto.categoria}
+            genero={producto.genero}
+        
+          />
               </Col>
             );
           })}
@@ -199,3 +209,10 @@ export const EditarProductos = () => {
     </>
   );
 };
+
+
+
+
+
+
+

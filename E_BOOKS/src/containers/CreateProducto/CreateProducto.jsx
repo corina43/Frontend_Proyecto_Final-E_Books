@@ -27,7 +27,7 @@ const CrearProductoForm = () => {
     try {
       // Enviar la solicitud para crear el producto
       const response = await axios.post(`${root}/productos/newproducto`, producto);
-      console.log(response.data); 
+     
 
       // Restablecer el formulario después de crear el producto
       setProducto({

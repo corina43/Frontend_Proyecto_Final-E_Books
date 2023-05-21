@@ -11,26 +11,14 @@ export const Usuarios = () => {
   const ReduxCredentials = useSelector(userData);
   const navigate = useNavigate();
   const [usuarios, setUsuarios] = useState([]);
-  //   nombre: "",
-  //   apellido: "",
-  //   email: "",
-  //   fecha_nacimiento: "",
-  //   fecha_registro: "",
-  //   ciudad: "",
-  //   pais: "",
-  //   generos_preferidos: "",
-  //   biografia: "",
-   
-   
-  // });
+ 
 
   useEffect(() => {
     if (usuarios.length === 0) {
-        console.log(ReduxCredentials?.credentials?.token)
+       
       verUsuariosPerfil(ReduxCredentials?.credentials?.token)
         .then((result) => {
-          console.log(result.data,"holaaaaaaaaaa");
-          console.log("esto es nOMBRE", result.data.apellido);
+         
           setUsuarios({
 
             nombre: result.data.nombre,
@@ -44,14 +32,14 @@ export const Usuarios = () => {
             biografia: result.data.biografia,
           });
         setUsuarios(result.data)
-        console.log("esto es resulatado", result.data.biografia);
+       
     }
 )
         
         .catch((error) => console.log(error));
     };
   }, [usuarios]);
-  console.log(usuarios, "usuarios info")
+
   return (
       
     <>

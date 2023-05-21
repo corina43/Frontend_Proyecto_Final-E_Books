@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
-import './BookCard.css'
+
 
 function BookCard({ productos }) {
   const [remove, setRemove] = useState(false);
   const handleCloseRemove = () => setRemove(false);
   const handleShowRemove = () => setRemove(true);
-//   const hola = "hola"
+
 
   const [update, setUpdate] = useState(false);
   const handleCloseUpdate = () => setUpdate(false);

@@ -34,13 +34,13 @@ export const Login = () => {
   };
 
   const checkError = (e) => {
-    console.log('Aqui van las validaciones')
+   
   };
 
   const logeame = () => {
     logMe(credenciales)
       .then((respuesta) => {
-        console.log(respuesta);
+       
         let decode = decodeToken(respuesta.data.data)
         
         let datosBackend = {
@@ -48,8 +48,7 @@ export const Login = () => {
           usuario: decode,
         };
         let nombre = datosBackend.usuario.email;
-        console.log('datosBackend');
-        console.log(datosBackend);
+      
         //Este es el momento en el que guardo en REDUX
         dispatch(login({ credentials: datosBackend }));
         setWelcome(`Bienvenid@ de nuevo ${nombre}`);

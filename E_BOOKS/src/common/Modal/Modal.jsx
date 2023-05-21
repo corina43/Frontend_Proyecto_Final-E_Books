@@ -15,7 +15,6 @@ const Modal=({show,item,onClose})=>{
                         <div className="info">
                             <h3>{item.volumeInfo.title}</h3>
                             <h5>{item.volumeInfo.authors}</h5>
-                            {/* <h6>{item.volumeInfo.publisher}<span>{item.volumeInfo.publishedDate}</span></h6><br/> */}
                             <a href={item.volumeInfo.previewLink}><button>More</button></a>
                         </div>
                     </div>

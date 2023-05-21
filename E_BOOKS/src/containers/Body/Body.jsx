@@ -13,7 +13,7 @@ import {Home} from '../../containers/Home/Home'
 import VistaProductos from '../VistaProductos/VistaProductos';
 import { Prestamos } from '../Prestamos/Prestamos';
 
-import CrearPrestamo from '../CreatePrestamo/CreatePrestamo';
+
 import  { DeleteUsuarios } from '../Admin/AdminDelete';
 import { EditarPerfil } from '../Profile/ProfileUpdate';
 import CrearProductoForm from '../CreateProducto/CreateProducto';
@@ -37,12 +37,12 @@ export const Body =() =>{
   <Route path="/usuarios/todos" element={<Admin />} />
   <Route path="/usuarios/prestamos" element={<AdminPrestamos />} />
   <Route path="/usuarios/delete/${id}" element={<DeleteUsuarios />} />
-  <Route path="/productos" element={<Productos />} />
+  <Route path="/productos/autor/${autor}" element={<Productos />} />
   <Route path="/productos/productos/${id}" element={<EditarProductos />} />
   <Route path="/productos/newproducto" element={<CrearProductoForm/>} />
   <Route path="/Vistaproductos" element={<VistaProductos />} />
   <Route path="/prestamos" element={<Prestamos />} /> 
-  <Route path="/prestamos/crearprestamos" element={<CrearPrestamo />} /> 
+ 
 
        
        

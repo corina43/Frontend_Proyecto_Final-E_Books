@@ -14,22 +14,22 @@ export const DeleteUsuarios = () => {
   const navigate = useNavigate();
   let params = userDetails.choosenObject.id;
 
-  // DELETE USER CONST AND REDIRECT TO GetAllUsers.jsx
+
   const handleDelete = async (userId) => {
     setIsLoading(true);
     setError('');
 
     try {
-      // Realizar la solicitud DELETE al endpoint de eliminación de usuarios
+     
       await EliminarUsuario(userId, ReduxCredentials?.credentials?.token);
 
-      // Mostrar mensaje de éxito y redirigir a GetAllUsers.jsx
+    
       setWelcome(`Eliminado correctamente: ${userDetails.choosenObject.email}`);
       setTimeout(() => {
         navigate("/usuarios/todos/");
       }, 1500);
     } catch (error) {
-      // Capturar y mostrar cualquier error
+  
       console.log(error);
       setWelcome(`No se puede eliminar un usuario administrador`);
       setTimeout(() => {

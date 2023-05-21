@@ -1,21 +1,21 @@
 /* Estilos para el contenedor principal */
-.containerProd {
+ .containerProd {
     width: 500px;
     margin: 0 auto;
     padding: 20px;
     
 }
   /* Estilos para el título */
-  h2 {
+   h2 {
     text-align: center;
     margin-bottom: 20px;
-  }
+  } 
   
   /* Estilos para el mensaje de éxito */
   .alert {
     margin-bottom: 20px;
   }
-  
+   
   /* Estilos para el formulario */
   .form-control {
     width: 100%;
@@ -24,10 +24,10 @@
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
+  } 
   
   /* Estilos para el botón de enviar */
-  .btn-primary {
+   .btn-primary {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,11 +43,11 @@
     border-radius: 4px;
     margin-top: 20px;
   }
-  
-  .btn-primary:hover {
+   
+   .btn-primary:hover {
     background-color: #0056b3;
   }
-  
+    
   /* Estilos para el formulario en Nexus 5 */
   @media (max-width: 360px) {
     .containerProd {
@@ -55,4 +55,4 @@
       padding: 10px;
     }
   }
-  
+    

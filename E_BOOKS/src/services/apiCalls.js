@@ -1,5 +1,5 @@
 import axios from 'axios';
-import api from './api';
+
 
 
 
@@ -119,4 +119,13 @@ export const CreatePrestamo = async (body, token) => {
     },
   };
   return await axios.put(`${root}/productos/productos/${id}`, body, config);
+};
+
+export const deleteProduct = async (id, token) => {
+  const config = {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  };
+  return await axios.delete(`${root}/productos/borrar/${id}`, config);
 };

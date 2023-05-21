@@ -32,7 +32,7 @@ export const Admin = () => {
                     result => {
 
                         setUsuarios(result.data.data)                      
-                        console.log(result.data.data, "hola result")
+                       
                     }
                 )
                 .catch(error => console.log(error))
@@ -41,7 +41,7 @@ export const Admin = () => {
     }, [usuarios]);
     
     
-console.log(usuarios, "sou users")
+
     return (
         
 <div className="usersDesign">

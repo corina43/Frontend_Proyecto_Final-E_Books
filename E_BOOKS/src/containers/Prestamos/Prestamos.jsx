@@ -24,21 +24,21 @@ export const Prestamos = (id_usuario) => {
       getPrestamos(ReduxCredentials?.credentials?.token)
         .then(
           result => {
-            console.log("Resultado completo:", result.data.data);
+         
           
 
             setPrestamos(result.data.data)
-            console.log(result.data,"hiiiiiiiiiiiii")
+            
           }
         )
         .catch(error => console.log(error));
     }
   }, [prestamos])
-  console.log(prestamos,"saliiiiiiiir");
+
 
   const selected = (prestamo) => {
     dispatch(addChoosen({ choosenObject: prestamo }))
-    console.log(prestamo,'tengo sueño')
+  
    
   }
 
@@ -47,21 +47,23 @@ export const Prestamos = (id_usuario) => {
 
 <Container fluid className='miPrest'>
 <Row>
+
   {prestamos.map((prestamo) => (
     <Col className='miPrestamo' key={prestamo.id} >
       <Card className="tarjeta">
-        <Card.Img className="tarjeta-img-top" src={prestamo.Producto.poster_path} alt={prestamo.Producto.titulo} />
+        <Card.Img className="tarjeta-imagen-top" src={prestamo.Producto.poster_path} alt={prestamo.Producto.titulo} />
         <Card.Body className="tarjeta-body">
-          <Card.Title className="tarjeta-header">{prestamo.Producto.titulo}</Card.Title>
+         
           <span className="textColor">Fecha inicio - fin: </span>
-          <Card.Text>{prestamo.fecha_inicio} - {prestamo.fecha_fin}</Card.Text>
+          <Card.Text className='txt'>{prestamo.fecha_inicio} - {prestamo.fecha_fin}</Card.Text>
           <span className="textColor">Comentario: </span>
-          <Card.Text>{prestamo.comentario_producto}</Card.Text>
+          <Card.Text className='txt'>{prestamo.comentario_producto}</Card.Text>
+          <FontAwesomeIcon className='icon' icon={faStar} />
+          <Card.Text className='txt'>{prestamo.puntuacion}</Card.Text>
         </Card.Body>
-        <Card.Footer className="tarjeta-footer">
-          <FontAwesomeIcon icon={faStar} />
-          <Card.Text>{prestamo.puntuacion}</Card.Text>
-        </Card.Footer>
+
+        
+    
       </Card>
     </Col>
   ))}

@@ -103,7 +103,7 @@ export const EditarPerfil = ({ }) => {
       verUsuariosPerfil(ReduxCredentials?.credentials?.token)
         .then((result) => {
           setUsuario(result.data);
-          console.log(result.data,'holaaaaaaaaaaaaaaaaa')
+         
           setUsuario({
             nombre: result.data.nombre,
             apellido: result.data.apellido,
@@ -119,7 +119,7 @@ export const EditarPerfil = ({ }) => {
         .catch((error) => console.log(error));
     }
   }, [usuario, ReduxCredentials?.credentials?.token]);
-console.log(usuario, ReduxCredentials?.credentials?.token,'jooooooooooo')
+
 
   const updateUser = () => {
     try {

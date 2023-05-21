@@ -34,17 +34,17 @@ export const AdminPrestamos = () => {
                     result => {
 
                         setPrestamos(result.data)                      
-                        console.log(result.data, "hola result")
+                     
                     }
                 )
                 .catch(error => console.log(error))
 
         }
     }, [prestamos]);
-console.log(prestamos, "soi prestamos")
+
 const selected = (prestamo) => {
     dispatch(addChoosen({ choosenObject: prestamo }))
-    console.log(prestamo,"ssssssssssss")
+
    
   }
 
@@ -53,7 +53,7 @@ const selected = (prestamo) => {
       <Container fluid className='adminPrestamos'>
       <Row>
         {prestamos.map((prestamo) => {
-          console.log(prestamo, "hola soy libro");
+        
           return (
             <Col className='prestamito' onClick={() => selected(prestamo)} key={prestamos.id}>
               <PrestamosCard prestamos={prestamo} />
@@ -67,48 +67,4 @@ const selected = (prestamo) => {
 );
 }
 
-//  <div className="usersDesign">
-//   <h3>Prestamos existentes:</h3>
-//      {prestamos.length > 0 ? (
-//         <Row xs={1} md={2} lg={5}>
-//           {prestamos.map((prestamo) => {
-//             return (
-//               <Col key={prestamo.id}>
-//                 <Card className="card my-3">
-//            <ListGroup variant="flush"> 
-//             <ListGroup.Item>
-//               <div className="text1">ID pRODUCTO:</div>
-//               <div className="text2"> {prestamo.id_producto}</div>
-//             </Group.Item>
-          
-//             <ListGroup.Item>
-//               <div className="text1"> Fecha inicio: </div>
-//               <div className="text2"> {prestamo.fecha_inicio}</div>
-//             </ListGroup.Item>
-//             <ListGroup.Item>
-//               <div className="text1"> Fecha fin: </div>
-//               <div className="text2"> {prestamo.fecha_fin}</div>
-//             </ListGroup.Item>
-//             <ListGroup.Item>
-//               <div className="text1"> Puntuacion: </div>
-//               <div className="text2"> {prestamo.puntuacion}</div>
-//             </ListGroup.Item>
-//             <ListGroup.Item>
-//               <div className="text1">Comentario </div>
-//               <div className="text2"> {prestamo.comentario_producto}</div>
-//             </ListGroup.Item>
-//           </ListGroup>
-//         </Card>
-               
-//                  </Col>
-//             );
-//           })}
-//         </Row> 
-//       ) : (
-        
-//         <div>ESTAN VINIENDO</div>
-//       )}
-//     </div>
-//   );
-// };
 
