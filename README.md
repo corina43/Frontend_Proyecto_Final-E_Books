@@ -210,7 +210,7 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
    >* Profile: permite ver la informacion de cada usuario 
    >* Profile Update: permite actualizar la informacion
 
-   >* Crear Prestamos: realizar prestamos sobre los productos existentes en la base de datos.
+   >* Crear Prestamos:  se hace un busqueda por titulo , y se realiza prestamo sobre los productos existentes en la base de datos.
    >* Libros por autor: busqueda por autor de los libros existentes en la base de datos
 
   ### Vista usuario admin
@@ -218,6 +218,8 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
  !['imagen-db'](./E_BOOKS/src/assets/Screenshot_186.png)  
 
    >* Logout: cerrar session
+   >* ### miInformacion:
+
    >* Profile: permite ver la informacion de cada usuario 
    >* Profile Update: permite actualizar la informacion
    >* ### Admin

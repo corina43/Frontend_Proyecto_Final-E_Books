@@ -12,8 +12,7 @@
      
 }
 .card {
-  /* flex: 1 0 25%;
-  margin: 10px;*/
+
   display: flex;
   justify-content: center;
   justify-items: center;
@@ -26,15 +25,5 @@
   background: #fff;
 
 }
-/* @media screen and (max-width: 768px) {
-  .card {
-    flex-basis: 50%;
-  }
-}*/
-/* 
- @media screen and (max-width: 360px) {
-  .card {
-    flex-basis: 90%;
-  }
-}  */
+
 

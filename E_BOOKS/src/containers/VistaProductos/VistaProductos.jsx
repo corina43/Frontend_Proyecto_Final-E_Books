@@ -367,7 +367,7 @@ const selected = (titulo) => {
 
 return (
   <>
-    <h1 className='hautor'>Productos</h1>
+    <h1 className='hautor'>Busca el titulo del libro que quieres prestar... </h1>
     <form className='formProductos' onSubmit={handleSubmit}>
       <input
         className='inputProductos'

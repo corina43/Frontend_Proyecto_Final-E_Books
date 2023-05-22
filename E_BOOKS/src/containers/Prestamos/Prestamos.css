@@ -7,9 +7,10 @@
     margin-left: 20px;
     margin-bottom: 10px;
     padding-left: 20px;
+ 
   } 
 
- .miPrestamo {
+ div.miPrestamo {
   display: flex;
   justify-content: center;
   justify-items: center;
@@ -17,6 +18,7 @@
   align-items: center;
   margin-right: 10px;
   margin-left: 10px;
+  padding-top: 20px;
 }
 
 .tarjeta {
@@ -28,6 +30,7 @@
   align-items: center;
   max-width: 22rem;
  
+ 
   transition: 0.15s linear;
 }
 
@@ -35,6 +38,7 @@
   max-width: 100%;
   max-height: 500px; 
   object-fit: cover; 
+ 
 
 }
 .txt{

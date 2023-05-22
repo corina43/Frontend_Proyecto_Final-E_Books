@@ -152,7 +152,7 @@ export const Productos = () => {
   
   return (
     <div>
-      <h1>Busca los libros de tu autor preferido</h1>
+      <h1 className='hautor'>Busca los libros de tu autor preferido...</h1>
       <form className='formProductos' onSubmit={handleSubmit}>
         <input className='inputProductos'
           type="text"
