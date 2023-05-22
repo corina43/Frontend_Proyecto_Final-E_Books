@@ -6,7 +6,7 @@ import { validate } from "../../common/helpers/usefull";
 import { verUsuariosPerfil, editarPerfil } from "../../services/apiCalls";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { InputText } from "../../common/InputText/InputText";
-import './ProfileUpdate.css'
+ import './ProfileUpdate.css'
 
 export const EditarPerfil = ({ }) => {
   const ReduxCredentials = useSelector(userData);

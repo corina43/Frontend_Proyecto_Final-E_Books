@@ -45,13 +45,16 @@ export const Admin = () => {
     return (
         
 <div className="usersDesign">
-  <h3>Usuarios existentes:</h3>
+
      {usuarios.length > 0 ? (
-        <Row xs={1} md={2} lg={5}>
+        <Row xs={1} md={2} lg={4}>
+          
           {usuarios.map((persona) => {
             return (
+          
               <Col key={persona.id}>
-                <Card className="card my-3">
+                   
+                <Card >
            <ListGroup variant="flush" className='lista'> 
             <ListGroup.Item>
               <span className="text1">Nombre:</span>

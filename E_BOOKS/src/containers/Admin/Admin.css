@@ -1,30 +1,40 @@
 .usersDesign {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  margin: 20px;
+  padding: 20px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
-h3{
+.usersDesign h3{
   text-align: center;
   margin-bottom: 20px;
      
 }
 .card {
-  flex: 1 0 25%;
-  margin: 10px;
-}
+  /* flex: 1 0 25%;
+  margin: 10px;*/
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  margin-right: 10px;
+  margin-left: 10px;
+} 
 .lista{
   background: #fff;
 
 }
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .card {
     flex-basis: 50%;
   }
-}
-
-@media screen and (max-width: 576px) {
+}*/
+/* 
+ @media screen and (max-width: 360px) {
   .card {
-    flex-basis: 100%;
+    flex-basis: 90%;
   }
-}
+}  */
 

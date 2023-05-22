@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
 
+
 }
 .prestamito.col{
     display: flex;
@@ -15,6 +16,7 @@
       align-items: center;
       margin-right: 10px;
       margin-left: 10px;
+      padding-top: 20px;
     }
 @media screen and (max-width: 360px) {
     .container-fluid {

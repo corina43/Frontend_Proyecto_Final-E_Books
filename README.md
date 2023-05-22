@@ -204,14 +204,14 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
 !['imagen-db'](./E_BOOKS/src/assets/Screenshot_173.png)
 
    >* Logout: cerrar session
+  
+   >* ### miInformacion:
+
    >* Profile: permite ver la informacion de cada usuario 
    >* Profile Update: permite actualizar la informacion
-   >* ### miInformacion:
-  * Mis prestamos: prestamos de cada usuario
-  * Productos: visualizar todos los libros existentes en la base de datos mediante cards con la imagen,descripcion,autor,titulo...
 
    >* Crear Prestamos: realizar prestamos sobre los productos existentes en la base de datos.
-   >* Libros por titulo: busqueda por titulo de los libros existentes en la base de datos
+   >* Libros por autor: busqueda por autor de los libros existentes en la base de datos
 
   ### Vista usuario admin
 
@@ -232,7 +232,7 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
 
 ⬜ No aparece el nombre del usuario logeado ,aparece el email.
 
-⬜ Problemas al actualizar el perfil.  
+⬜ Borrar usuarios ,borra los usarios que no han realizado prestamos. 
 
 
 ## Webgrafia:
