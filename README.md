@@ -201,7 +201,7 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
 
 ### Vista usuario registrado(se accede mediante login)
 
-!['imagen-db'](./E_BOOKS/src/assets/Screenshot_283.png)
+!['imagen-db'](./E_BOOKS/src/assets/Screenshot_263.png)
 
    >* Logout: cerrar session
   
@@ -215,7 +215,7 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
 
   ### Vista usuario admin
 
- !['imagen-db'](./E_BOOKS/src/assets/Screenshot_282.png)  
+ !['imagen-db'](./E_BOOKS/src/assets/Screenshot_262.png)  
 
    >* Logout: cerrar session
    >* ### miInformacion:
