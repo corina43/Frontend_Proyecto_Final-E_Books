@@ -201,7 +201,7 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
 
 ### Vista usuario registrado(se accede mediante login)
 
-!['imagen-db'](./E_BOOKS/src/assets/Screenshot_173.png)
+!['imagen-db'](./E_BOOKS/src/assets/Screenshot_283.png)
 
    >* Logout: cerrar session
   
@@ -215,7 +215,7 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
 
   ### Vista usuario admin
 
- !['imagen-db'](./E_BOOKS/src/assets/Screenshot_186.png)  
+ !['imagen-db'](./E_BOOKS/src/assets/Screenshot_282.png)  
 
    >* Logout: cerrar session
    >* ### miInformacion:
@@ -228,7 +228,8 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
    * Todos los prestamos: muestra la informacion de todos los prestamos
    * Productos: muestra todos los libros existentes en la base de datos mediante cards con la imagen,descripcion,autor,titulo...
    >* Libros por titulo: busqueda por titulo de los libros existentes en la base de datos
-
+   >* Crear Prestamos:  se hace un busqueda por titulo , y se realiza prestamo sobre los productos existentes en la base de datos.
+   >* Libros por autor: busqueda por autor de los libros existentes en la base de datos y muestra todos los libros existentes en la base de datos  la imagen,descripcion,autor,titulo...
    ## Bugs conocidos
 
 
